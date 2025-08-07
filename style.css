@@ -2556,3 +2556,191 @@ color: var(--accent-color);
     border-color: var(--button-bg);
     background-color: #fff;
 }
+
+/* ============================================== */
+/* CSS BARU UNTUK HALAMAN KODE KUPON (GRID)       */
+/* ============================================== */
+
+.coupon-grid-container {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.coupon-category-section {
+    margin-bottom: 50px;
+}
+
+.coupon-category-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.coupon-category-section h2 i {
+    margin-right: 12px;
+    color: var(--button-bg);
+}
+
+.coupon-grid {
+    display: grid;
+    /* Secara default 1 kolom di mobile */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+.coupon-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.coupon-card.featured {
+    border-left-color: var(--button-bg);
+    background: linear-gradient(to right, #f5faff, #ffffff);
+}
+
+.coupon-code-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.coupon-card h4 {
+    margin: 0;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: var(--button-bg);
+    background-color: var(--footer-bg);
+    padding: 8px 12px;
+    border-radius: 6px;
+    letter-spacing: 2px;
+}
+
+.copy-code-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--secondary-text-color);
+}
+
+.copy-code-btn:hover {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+}
+
+.coupon-description {
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 0 0 10px 0;
+    flex-grow: 1; /* Membuat deskripsi mengisi ruang kosong */
+}
+
+.coupon-terms {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
+
+.coupon-expiry {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-top: auto; /* Mendorong ke bawah kartu */
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.coupon-expiry i {
+    margin-right: 8px;
+}
+
+/* Aturan untuk Laptop / Layar Lebar */
+@media (min-width: 768px) {
+    .coupon-grid {
+        /* 2 kolom untuk tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .coupon-grid {
+        /* 3 kolom untuk laptop/desktop */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================================== */
+/* CSS BARU UNTUK HALAMAN LACAK PESANAN           */
+/* ============================================== */
+.track-order-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 250px);
+    padding: 40px 20px;
+    background-color: var(--footer-bg);
+}
+
+.track-order-card {
+    width: 100%;
+    max-width: 550px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+}
+
+.track-order-icon {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--button-bg);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.track-order-card h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.track-order-card p {
+    font-size: 17px;
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+}
+
+.track-order-form .input-field {
+    text-align: center;
+    font-size: 18px;
+    padding: 16px;
+}
+
+.track-order-form .button {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+}

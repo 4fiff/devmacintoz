@@ -52,13 +52,16 @@
         </div>
     </div>
 
-    <main class="placeholder-page">
-        <div class="track-order-box">
+    <main class="track-order-container">
+        <div class="track-order-card">
+            <div class="track-order-icon">
+                <i class="fas fa-shipping-fast"></i>
+            </div>
             <h1>Lacak Pesanan Anda</h1>
             <p>Masukkan nomor pesanan atau nomor resi Anda untuk melihat status pengiriman.</p>
             <div class="track-order-form">
-                <input type="text" class="input-field" placeholder="Contoh: INV12345 atau JNE123456789">
-                <button class="button">Lacak</button>
+                <input type="text" id="tracking-input" class="input-field" placeholder="Contoh: MCNTZ12345 atau JNE123456789">
+                <button id="track-btn" class="button">Lacak</button>
             </div>
             <p class="form-note">Nomor resi akan dikirimkan ke email Anda maksimal 1x24 jam setelah pembayaran dikonfirmasi.</p>
         </div>
