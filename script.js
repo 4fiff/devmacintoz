@@ -1302,6 +1302,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Fungsi untuk menampilkan pop-up promosi
+    function initializePromoPopup() {
+        const popupOverlay = document.getElementById('popup-overlay');
+    
+        // Hanya jalankan jika elemen pop-up ada di halaman
+        if (!popupOverlay) {
+            return;
+        }
+    
+        const closeBtn = popupOverlay.querySelector('.close-btn');
+    
+        const showPopup = () => {
+            popupOverlay.classList.add('show');
+        };
+    
+        const hidePopup = () => {
+            popupOverlay.classList.remove('show');
+        };
+    
+        // Tampilkan pop-up setelah 2 detik
+        setTimeout(showPopup, 2000);
+    
+        // Event listener untuk tombol close
+        closeBtn.addEventListener('click', hidePopup);
+    
+        // Event listener untuk klik di luar banner
+        popupOverlay.addEventListener('click', (event) => {
+            if (event.target === popupOverlay) {
+                hidePopup();
+            }
+        });
+    }
+    
+    // Panggil fungsi pop-up di inisialisasi aplikasi
+    const originalInitializeApp = initializeApp;
+    initializeApp = () => {
+        originalInitializeApp();
+        // Pastikan ini hanya berjalan di halaman index
+        if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
+            initializePromoPopup();
+        }
+    };
+    
+    // Panggil initializeApp yang baru
+    initializeApp();
+
     const initializeApp = () => {
         checkPendingPayment();
         updateSharedUI();
