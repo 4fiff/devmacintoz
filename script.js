@@ -1335,18 +1335,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Panggil fungsi pop-up di inisialisasi aplikasi
-    const originalInitializeApp = initializeApp;
-    initializeApp = () => {
-        originalInitializeApp();
-        // Pastikan ini hanya berjalan di halaman index
-        if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
-            initializePromoPopup();
-        }
-    };
+    function initializeMobileNav() {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
     
-    // Panggil initializeApp yang baru
-    initializeApp();
+        if (menuBtn && mobileNav && closeBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('open');
+            });
+    
+            closeBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+            });
+        }
+    }
+    
+    // Fungsi untuk inisialisasi dropdown
+    function initializeDropdowns() {
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            item.addEventListener('click', function(event) {
+                // Cek apakah dropdown yang diklik sudah aktif
+                const wasActive = this.classList.contains('active');
+    
+                // Hapus kelas 'active' dari semua dropdown
+                document.querySelectorAll('.nav-item.has-dropdown').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+    
+                // Jika dropdown yang diklik sebelumnya tidak aktif, aktifkan
+                if (!wasActive) {
+                    this.classList.add('active');
+                }
+    
+                event.stopPropagation();
+            });
+        });
+    
+        // Menutup dropdown jika mengklik di luar
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+    
+        // Mencegah dropdown tertutup saat mengklik di dalamnya
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.addEventListener('click', event => {
+                event.stopPropagation();
+            });
+        });
+    }
+    
+    // Fungsi untuk menampilkan pop-up promosi
+    function initializePromoPopup() {
+        const popupOverlay = document.getElementById('popup-overlay');
+    
+        // Hanya jalankan jika elemen pop-up ada di halaman
+        if (!popupOverlay) {
+            return;
+        }
+    
+        const closeBtn = popupOverlay.querySelector('.close-btn');
+    
+        const showPopup = () => {
+            popupOverlay.classList.add('show');
+        };
+    
+        const hidePopup = () => {
+            popupOverlay.classList.remove('show');
+        };
+    
+        // Tampilkan pop-up setelah 2 detik
+        setTimeout(showPopup, 2000);
+    
+        // Event listener untuk tombol close
+        closeBtn.addEventListener('click', hidePopup);
+    
+        // Event listener untuk klik di luar banner
+        popupOverlay.addEventListener('click', (event) => {
+            if (event.target === popupOverlay) {
+                hidePopup();
+            }
+        });
+    }
 
     const initializeApp = () => {
         checkPendingPayment();
@@ -1369,5 +1441,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    let initializeApp = () => {
+        initializeMobileNav();
+        initializeDropdowns();
+    };
+    
+    
+    // Panggil fungsi pop-up di inisialisasi aplikasi
+    const originalInitializeApp = initializeApp;
+    initializeApp = () => {
+        originalInitializeApp();
+        // Pastikan ini hanya berjalan di halaman index
+        if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
+            initializePromoPopup();
+        }
+    };
+    
+    // Panggil initializeApp yang baru
     initializeApp();
 });
