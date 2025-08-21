@@ -315,8 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayProducts();
     };
 
-    // GANTI FUNGSI renderDetailPage LAMA ANDA DENGAN SEMUA KODE DI BAWAH INI
-
     const renderDetailPage = () => {
         const contentDiv = document.getElementById('product-detail-content');
         if (!contentDiv) return;
@@ -342,13 +340,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderRelatedProducts(product);
     };
 
-    // FUNGSI BARU UNTUK MENAMPILKAN PRODUK STANDAR (MACBOOK)
     function renderStandardProduct(product) {
-        // Sembunyikan wadah varian yang tidak digunakan
         const variantOptionsContainer = document.getElementById('variant-options-container');
         if (variantOptionsContainer) variantOptionsContainer.style.display = 'none';
-
-        // Tampilkan info grade
         const gradeElement = document.getElementById('detail-grade');
         if (gradeElement) {
             const gradeText = product.grade === 'Baru' ? 'BARU' : `GRADE ${product.grade}`;
@@ -357,12 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let gradeDescriptionText = (product.grade === 'Baru') ? 'Brand New In Box (BNIB)' : `Kondisi: ${gradeDescriptions[product.grade] || product.grade}`;
             gradeElement.innerHTML = `<div class="${gradeBadgeClass}">${gradeText}</div><span>${gradeDescriptionText}</span>`;
         }
-        
-        // Tampilkan harga, SKU
         document.getElementById('detail-price').textContent = formatRupiah(product.price);
         document.getElementById('detail-sku').textContent = `SKU: ${product.sku}`;
-        
-        // Tampilkan deskripsi terstruktur
         const descriptionContainer = document.getElementById('detail-description-container');
         descriptionContainer.innerHTML = ''; 
         const introParagraph = document.createElement('p');
@@ -383,7 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
             specsSection.appendChild(specsList);
             descriptionContainer.appendChild(specsSection);
         }
-
         const prosConsContainer = document.getElementById('detail-pros-cons-container');
         prosConsContainer.innerHTML = '';
         if (product.pros && product.pros.length > 0) {
@@ -410,7 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
             consSection.appendChild(consList);
             prosConsContainer.appendChild(consSection);
         }
-
         const inTheBoxContainer = document.getElementById('detail-in-the-box-container');
         inTheBoxContainer.innerHTML = '';
         if (product.inTheBox && product.inTheBox.length > 0) {
@@ -424,8 +412,6 @@ document.addEventListener('DOMContentLoaded', () => {
             inTheBoxSection.appendChild(inTheBoxList);
             inTheBoxContainer.appendChild(inTheBoxSection);
         }
-
-        // Tampilkan Stok & Terjual
         const stockElement = document.getElementById('detail-stock');
         let stockText = product.stock > 0 ? `Ketersediaan: Sisa ${product.stock} unit` : `Ketersediaan: Stok Habis`;
         stockElement.textContent = stockText;
@@ -434,8 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product.sold > 0) {
             stockElement.innerHTML += ` &bull; <span class="sold-info"><i class="fas fa-fire"></i> ${product.sold} terjual</span>`;
         }
-
-        // Atur Tombol Add to Cart
         const addToCartBtn = document.getElementById('detail-add-to-cart-btn');
         if (product.stock > 0) {
             addToCartBtn.disabled = false;
@@ -446,26 +430,17 @@ document.addEventListener('DOMContentLoaded', () => {
             addToCartBtn.textContent = 'Stok Kosong';
             addToCartBtn.onclick = null;
         }
-
-        // Jalankan slider gambar
         setupImageSlider(product.images);
     }
 
     function renderVariantProduct(product) {
-        // Tampilkan wadah untuk pilihan varian
         const variantOptionsContainer = document.getElementById('variant-options-container');
         if (variantOptionsContainer) variantOptionsContainer.style.display = 'block';
-
-        // Sembunyikan elemen grade A/B/C yang tidak relevan untuk produk varian
         const gradeElement = document.getElementById('detail-grade');
         if(gradeElement) gradeElement.innerHTML = '';
-        
-        // Inisialisasi state awal berdasarkan data varian pertama
         let selectedColor = product.variants[0].color;
         let selectedStorage = product.variants.find(v => v.color === selectedColor)?.storage;
         let selectedFeature = product.variants.find(v => v.color === selectedColor)?.feature;
-
-        // Ambil semua elemen HTML yang akan dimanipulasi
         const nameEl = document.getElementById('detail-name');
         const priceEl = document.getElementById('detail-price');
         const skuEl = document.getElementById('detail-sku');
@@ -475,19 +450,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const featureSelector = document.getElementById('feature-selector');
         const selectedColorNameEl = document.getElementById('selected-color-name');
         const addToCartBtn = document.getElementById('detail-add-to-cart-btn');
-        
-        // Fungsi utama untuk memperbarui seluruh tampilan berdasarkan pilihan
         function updateDisplay(options = {}) {
             const { isColorChange = false } = options;
-            // Cari varian yang cocok dengan semua pilihan saat ini
             let currentVariant = product.variants.find(v => {
                 const colorMatch = !v.color || v.color === selectedColor;
                 const storageMatch = !v.storage || v.storage === selectedStorage;
                 const featureMatch = !v.feature || v.feature === selectedFeature;
                 return colorMatch && storageMatch && featureMatch;
             });
-
-            // Jika kombinasi tidak ada, kembali ke varian valid pertama untuk warna yang dipilih
             if (!currentVariant) {
                 const firstAvailable = product.variants.find(v => v.color === selectedColor);
                 if(firstAvailable) {
@@ -495,25 +465,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectedFeature = firstAvailable.feature;
                     currentVariant = firstAvailable;
                 } else {
-                    return; // Seharusnya tidak terjadi
+                    return;
                 }
             }
-
             const finalPrice = (product.basePrice || product.price) + (currentVariant.priceModifier || 0);
             priceEl.textContent = formatRupiah(finalPrice);
             skuEl.textContent = `SKU: ${currentVariant.sku}`;
-            
             let stockText = currentVariant.stock > 0 ? `Ketersediaan: Sisa ${currentVariant.stock} unit` : `Ketersediaan: Stok Habis`;
             stockEl.textContent = stockText;
             if (currentVariant.stock <= CONFIG.LOW_STOCK_THRESHOLD) { stockEl.classList.add('low-stock'); } 
             else { stockEl.classList.remove('low-stock'); }
-            
             const soldInfoSpan = stockEl.querySelector('.sold-info');
             if(soldInfoSpan) soldInfoSpan.remove();
             if (currentVariant.sold > 0) {
                 stockEl.innerHTML += ` &bull; <span class="sold-info"><i class="fas fa-fire"></i> ${currentVariant.sold} terjual</span>`;
             }
-
             addToCartBtn.disabled = currentVariant.stock === 0;
             addToCartBtn.textContent = currentVariant.stock > 0 ? 'Tambah ke Keranjang' : 'Stok Kosong';
             addToCartBtn.onclick = () => {
@@ -522,7 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     if(currentVariant.feature) variantName += ` (${currentVariant.feature})`;
                     if(currentVariant.storage) variantName += ` (${currentVariant.storage})`;
                     if(currentVariant.color && !currentVariant.keys && !currentVariant.surface) variantName += `, ${currentVariant.color}`;
-                    
                     const itemToAdd = {
                         id: currentVariant.sku, 
                         name: variantName,
@@ -533,33 +498,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     addToCart(itemToAdd, 1);
                 }
             };
-            
             if (isColorChange) {
                 if (product.images[selectedColor || 'Default']) {
                     setupImageSlider(product.images[selectedColor || 'Default']);
                 }
             }
-            
             if (selectedColorNameEl) selectedColorNameEl.textContent = selectedColor || '';
             createVariantSelectors();
         }
 
-        // Fungsi untuk membuat tombol-tombol pilihan secara dinamis
         function createVariantSelectors() {
             const variantTypes = new Set(product.variants.flatMap(v => Object.keys(v)));
-            
             const colorGroup = document.getElementById('color-variant-group');
             const storageGroup = document.getElementById('storage-variant-group');
             const featureGroup = document.getElementById('feature-variant-group');
             const keysGroup = document.getElementById('keys-variant-group');
             const surfaceGroup = document.getElementById('surface-variant-group');
-
             if(colorGroup) colorGroup.style.display = 'none';
             if(storageGroup) storageGroup.style.display = 'none';
             if(featureGroup) featureGroup.style.display = 'none';
             if(keysGroup) keysGroup.style.display = 'none';
             if(surfaceGroup) surfaceGroup.style.display = 'none';
-            
             if (variantTypes.has('color')) createColorOptions();
             if (variantTypes.has('storage')) createStorageOptions();
             if (variantTypes.has('feature')) createFeatureOptions();
@@ -595,7 +554,6 @@ document.addEventListener('DOMContentLoaded', () => {
             storageSelector.parentElement.style.display = 'block';
             const allPossibleStorages = [...new Set(product.variants.map(v => v.storage))].filter(Boolean);
             const availableStoragesForColor = product.variants.filter(v => v.color === selectedColor).map(v => v.storage);
-            
             storageSelector.innerHTML = '';
             allPossibleStorages.forEach(storageValue => {
                 const option = document.createElement('div');
@@ -632,13 +590,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!selectorContainer) return;
             selectorContainer.parentElement.style.display = 'block';
             selectorContainer.parentElement.querySelector('.variant-label').textContent = label;
-            
             const allPossibleValues = [...new Set(product.variants.map(v => v[variantType]))].filter(Boolean);
-            
             let selectedValue;
             if(variantType === 'keys') selectedValue = product.variants.find(v => v.sku === (product.variants.find(va => va.keys)?.sku))?.keys;
             if(variantType === 'surface') selectedValue = product.variants.find(v => v.sku === (product.variants.find(va => va.surface)?.sku))?.surface;
-            
             selectorContainer.innerHTML = '';
             allPossibleValues.forEach(value => {
                 const option = document.createElement('div');
@@ -673,16 +628,10 @@ document.addEventListener('DOMContentLoaded', () => {
             specsSection.appendChild(specsList);
             descriptionContainer.appendChild(specsSection);
         }
-
-        // (Logika untuk menampilkan pros, cons, dll. bisa ditambahkan di sini jika perlu)
         const prosConsContainer = document.getElementById('detail-pros-cons-container');
         const inTheBoxContainer = document.getElementById('detail-in-the-box-container');
-
-        // Mengosongkan kontainer sebelum mengisi dengan data baru
         prosConsContainer.innerHTML = '';
         inTheBoxContainer.innerHTML = '';
-
-        // Menampilkan bagian Kelebihan (Pros) jika data ada
         if (product.pros && product.pros.length > 0) {
             const prosSection = document.createElement('div');
             prosSection.id = 'detail-pros';
@@ -699,8 +648,6 @@ document.addEventListener('DOMContentLoaded', () => {
             prosSection.appendChild(prosList);
             prosConsContainer.appendChild(prosSection);
         }
-
-        // Menampilkan bagian Kekurangan (Cons) jika data ada
         if (product.cons && product.cons.length > 0) {
             const consSection = document.createElement('div');
             consSection.id = 'detail-cons';
@@ -717,8 +664,6 @@ document.addEventListener('DOMContentLoaded', () => {
             consSection.appendChild(consList);
             prosConsContainer.appendChild(consSection);
         }
-
-        // Menampilkan bagian Kelengkapan dalam Kotak (In the Box) jika data ada
         if (product.inTheBox && product.inTheBox.length > 0) {
             const inTheBoxSection = document.createElement('div');
             inTheBoxSection.className = 'detail-description-section';
@@ -739,30 +684,22 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay({ isColorChange: true });
     }
 
-    // --- FUNGSI SLIDER TERPUSAT ---
     function setupImageSlider(imagesArray) {
         const imgElement = document.getElementById('detail-img');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const dotsContainer = document.getElementById('slider-dots');
-
         if (!imgElement || !prevBtn || !nextBtn || !dotsContainer || !imagesArray || imagesArray.length === 0) {
             return;
         }
-
-        preloadImages(imagesArray);
-
         let currentImageIndex = 0;
-
         function updateSlider() {
             imgElement.src = `/${imagesArray[currentImageIndex]}`;
             imgElement.alt = `Gambar produk ${currentImageIndex + 1}`;
-            
             document.querySelectorAll('.slider-dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentImageIndex);
             });
         }
-
         dotsContainer.innerHTML = '';
         if (imagesArray.length > 1) {
             imagesArray.forEach((_, index) => {
@@ -780,7 +717,6 @@ document.addEventListener('DOMContentLoaded', () => {
             prevBtn.style.display = 'none';
             nextBtn.style.display = 'none';
         }
-        
         prevBtn.onclick = () => {
             currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
             updateSlider();
@@ -789,47 +725,30 @@ document.addEventListener('DOMContentLoaded', () => {
             currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
             updateSlider();
         };
-        
         updateSlider();
     }
 
-    // GANTI ATAU TAMBAHKAN FUNGSI INI DI DALAM script.js ANDA
-
     function renderRelatedProducts(currentProduct) {
         const relatedGrid = document.getElementById('related-products-grid');
-        // Jika tidak ada wadah untuk produk terkait di halaman, hentikan fungsi
         if (!relatedGrid) return;
-
-        relatedGrid.innerHTML = ''; // Kosongkan dulu untuk menghindari duplikasi
-
-        // Tentukan kategori utama dari produk yang sedang dilihat
+        relatedGrid.innerHTML = ''; 
         const primaryCategory = currentProduct.kategori;
-
-        // 1. Filter semua produk untuk menemukan yang kategorinya sama,
-        //    KECUALI produk yang sedang dilihat saat ini.
         let relatedProducts = products.filter(p =>
             p.kategori === primaryCategory && p.id !== currentProduct.id
         );
-
-        // 2. Acak hasil filter dan ambil maksimal 4 produk untuk ditampilkan.
         relatedProducts.sort(() => 0.5 - Math.random());
         const selectedRelated = relatedProducts.slice(0, 4);
-
-        // Jika tidak ada produk terkait, sembunyikan section-nya
         if (selectedRelated.length === 0) {
             const relatedSection = document.querySelector('.related-products-section');
             if(relatedSection) relatedSection.style.display = 'none';
             return;
         }
-
-        // 3. Tampilkan kartu untuk setiap produk terkait yang terpilih
         selectedRelated.forEach(product => {
             const card = document.createElement('a');
             card.href = `/detail-produk.html?id=${product.id}`;
             card.className = 'product-card';
             card.style.textDecoration = 'none';
             card.style.color = 'inherit';
-
             const isVariant = !!product.variants;
             const displayPrice = isVariant ? product.basePrice : product.price;
             const displayImage = isVariant ? product.images[product.variants[0].color][0] : product.images[0];
@@ -838,8 +757,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const gradeBadgeClass = product.grade ? `product-grade-badge grade-${product.grade.toLowerCase()}` : '';
             const gradeBadge = product.grade ? `<div class="${gradeBadgeClass}">${gradeText}</div>` : '';
             const buttonText = isVariant ? 'Lihat Opsi' : 'Lihat Detail';
-
-            // Tampilan kartu untuk produk dengan varian (iPhone)
             if (isVariant) {
                 card.innerHTML = `
                     <img src="/${displayImage}" alt="${product.name}">
@@ -851,7 +768,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             } 
-            // Tampilan kartu untuk produk non-varian (MacBook)
             else {
                 let stockHTML = '';
                 if (product.stock > 0) {
@@ -877,31 +793,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderCartPage = () => {
         const itemsList = document.getElementById('cart-items-list');
         if(!itemsList) return;
-
         const summaryTotalItems = document.getElementById('summary-total-items');
         const summaryTotalPrice = document.getElementById('summary-total-price');
         const emptyCartMsg = document.getElementById('empty-cart-message');
         const cartContent = document.getElementById('cart-page-content');
-        
         itemsList.innerHTML = '';
         if (cart.length === 0) {
             emptyCartMsg.style.display = 'block';
             cartContent.style.display = 'none';
             return;
         }
-
         emptyCartMsg.style.display = 'none';
         cartContent.style.display = 'flex';
         let totalItems = 0;
         let totalPrice = 0;
-
         cart.forEach(item => {
             const itemEl = document.createElement('div');
             itemEl.className = 'cart-item';
-
-            // Cek apakah item.specs ada, jika tidak, tampilkan string kosong
             const specsHTML = item.specs ? `<p>${item.specs}</p>` : '';
-
             itemEl.innerHTML = `
                 <img src="/${item.img}" alt="${item.name}">
                 <div class="cart-item-info">
@@ -922,10 +831,8 @@ document.addEventListener('DOMContentLoaded', () => {
             totalItems += item.quantity;
             totalPrice += item.price * item.quantity;
         });
-
         summaryTotalItems.textContent = totalItems;
         summaryTotalPrice.textContent = formatRupiah(totalPrice);
-
         document.querySelectorAll('.quantity-decrease').forEach(btn => {
             btn.onclick = e => {
                 const id = e.target.dataset.id;
@@ -976,7 +883,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let shippingDiscountPercent = 0;
         let shippingCost = 0;
         let appliedCoupon = null;
-
         function populateSelectOptions() {
             const provinceNames = Object.keys(CONFIG.PROVINCES);
             provinceNames.sort().forEach(name => {
@@ -992,7 +898,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 shippingServiceSelect.appendChild(option);
             });
         }
-
         function renderTotals() {
             subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const actualShippingDiscount = shippingCost * (shippingDiscountPercent / 100);
@@ -1017,7 +922,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             totalEl.textContent = formatRupiah(total > 0 ? total : 0);
         }
-
         function applyCoupon() {
             const code = couponInput.value.trim().toUpperCase();
             const couponData = CONFIG.COUPONS[code];
@@ -1056,7 +960,6 @@ document.addEventListener('DOMContentLoaded', () => {
             couponBtn.classList.add('cancel');
             renderTotals();
         }
-        
         function cancelCoupon() {
             flatDiscount = 0;
             shippingDiscountPercent = 0;
@@ -1068,13 +971,11 @@ document.addEventListener('DOMContentLoaded', () => {
             couponBtn.classList.remove('cancel');
             renderTotals();
         }
-
         function proceedToPayment() {
             const finalShippingCost = shippingCost * (1 - shippingDiscountPercent / 100);
             const finalTotal = subtotal - flatDiscount + finalShippingCost;
             const uniqueCode = Math.floor(100 + Math.random() * 900);
             const paymentEndTime = new Date().getTime() + CONFIG.PAYMENT_TIMER_MINUTES * 60 * 1000;
-
             const shippingInfo = {
                 email: document.getElementById('email').value,
                 name: document.getElementById('full-name').value,
@@ -1085,23 +986,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 phone: document.getElementById('phone').value,
                 service: document.getElementById('shipping-service').value
             };
-            
             const paymentData = { 
                 totalPrice: finalTotal > 0 ? finalTotal : 0, 
                 code: uniqueCode, 
                 endTime: paymentEndTime,
-                shippingInfo: shippingInfo // <-- Simpan info pengiriman
+                shippingInfo: shippingInfo
             };
-
-            
-
             localStorage.setItem('paymentData', JSON.stringify(paymentData));
             cart = [];
             saveCart();
             updateSharedUI();
             window.location.href = '/cara-bayar.html';
         }
-
         function setupEventListeners() {
             provinceSelect.addEventListener('change', () => {
                 const selectedProvince = provinceSelect.value;
@@ -1140,13 +1036,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        
         populateSelectOptions();
         renderTotals();
         setupEventListeners();
     };
-
-    
 
     const renderCaraBayarPage = () => {
         const paymentDataString = localStorage.getItem('paymentData');
@@ -1162,7 +1055,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('bank-name').textContent = CONFIG.BANK_NAME;
         document.getElementById('account-number').textContent = CONFIG.ACCOUNT_NUMBER;
         document.getElementById('account-name').textContent = CONFIG.ACCOUNT_NAME;
-        
         if (paymentData.shippingInfo) {
             const info = paymentData.shippingInfo;
             document.getElementById('summary-email').textContent = info.email;
@@ -1170,18 +1062,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('summary-address').textContent = `${info.address}, ${info.city}, ${info.province}, ${info.postalCode}`;
             document.getElementById('summary-shipping-service').textContent = info.service;
         }
-
         const cancelBtn = document.getElementById('cancel-order-btn');
         if(cancelBtn) {
             cancelBtn.addEventListener('click', () => {
                 if (confirm('Apakah Anda yakin ingin membatalkan pesanan ini? Sesi pembayaran Anda akan dihapus.')) {
                     localStorage.removeItem('paymentData');
                     alert('Pesanan telah berhasil dibatalkan.');
-                    window.location.href = 'index.html'; // Arahkan ke halaman utama
+                    window.location.href = 'index.html';
                 }
             });
         }
-        
         const timerDisplay = document.getElementById('timer-display');
         const paymentDetailsWrapper = document.getElementById('payment-details-wrapper');
         const timeUpMessage = document.getElementById('time-up-message');
@@ -1288,17 +1178,46 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeFilterToggle() {
         const toggleBtn = document.getElementById('toggle-filter-btn');
         const filtersContainer = document.getElementById('collapsible-filters');
-
-        // Jika tombol atau kontainer tidak ditemukan di halaman, hentikan fungsi
         if (!toggleBtn || !filtersContainer) {
             return;
         }
-
         toggleBtn.addEventListener('click', () => {
-            // Menambah/menghapus kelas 'open' untuk memutar ikon panah
             toggleBtn.classList.toggle('open');
-            // Menambah/menghapus kelas 'filters-open' untuk menampilkan/menyembunyikan filter
             filtersContainer.classList.toggle('filters-open');
+        });
+    }
+
+    // FUNGSI BARU UNTUK POP-UP PROMOSI
+    function initializePromoPopup() {
+        const overlay = document.getElementById('promo-popup-overlay');
+        const closeBtn = document.getElementById('promo-popup-close');
+        
+        if (!overlay || !closeBtn) return; // Jika elemen tidak ada, hentikan fungsi
+        
+        const FIVE_MINUTES_IN_MS = 5 * 60 * 1000;
+        const dismissedUntil = localStorage.getItem('popupDismissedUntil');
+        const now = new Date().getTime();
+        
+        // Tampilkan pop-up jika waktu cooldown sudah lewat atau belum pernah ada
+        if (!dismissedUntil || now > parseInt(dismissedUntil)) {
+            overlay.classList.remove('hidden');
+        }
+        
+        // Fungsi untuk menyembunyikan pop-up dan mencatat waktu
+        const hidePopup = () => {
+            const newDismissedUntil = new Date().getTime() + FIVE_MINUTES_IN_MS;
+            localStorage.setItem('popupDismissedUntil', newDismissedUntil.toString());
+            overlay.classList.add('hidden');
+        };
+        
+        // Event listener untuk tombol 'X'
+        closeBtn.addEventListener('click', hidePopup);
+        
+        // Event listener untuk klik di luar area banner (di overlay gelap)
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                hidePopup();
+            }
         });
     }
 
@@ -1320,6 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (path.endsWith('/') || path.includes('/index.html')) {
             initializeReviewSlider();
             initializeVideoControls();
+            initializePromoPopup(); // <-- Panggil fungsi pop-up di sini
         }
     };
 
