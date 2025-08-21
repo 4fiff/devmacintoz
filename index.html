@@ -326,6 +326,87 @@
 
     <script src="/produk.js"></script>
     <script src="/script.js"></script>
+    <!-- Promo Modal -->
+    <div class="promo-modal" id="promoModal" aria-hidden="true">
+      <div class="promo-dialog" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+        <button class="promo-close" id="promoClose" aria-label="Tutup promosi">&times;</button>
+        <a href="buy-macbook.html" class="promo-link" id="promoLink" aria-label="Lihat promo MacBook">
+          <img src="images/popup-banner.png" alt="Promo MacBook & produk Apple" loading="lazy" />
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // ===== Promo Modal (Popup Banner) =====
+        (function () {
+          const MODAL_ID = 'promoModal';
+          const CLOSE_ID = 'promoClose';
+          const LINK_ID  = 'promoLink';
+          const STORAGE_KEY = 'promoBannerDismissed_v1';
+        
+          function qs(id) { return document.getElementById(id); }
+          function openModal() {
+            const modal = qs(MODAL_ID);
+            if (!modal) return;
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            // focus ke close button untuk aksesibilitas
+            const closeBtn = qs(CLOSE_ID);
+            if (closeBtn) closeBtn.focus({ preventScroll: true });
+          }
+          function closeModal() {
+            const modal = qs(MODAL_ID);
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+          }
+        
+          document.addEventListener('DOMContentLoaded', function () {
+            // Hanya tampilkan jika belum pernah ditutup di sesi ini
+            if (!localStorage.getItem(STORAGE_KEY)) {
+              // Delay ringan agar tidak tabrakan render awal
+              setTimeout(openModal, 600);
+            }
+        
+            const closeBtn = qs(CLOSE_ID);
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function () {
+                localStorage.setItem(STORAGE_KEY, '1');
+                closeModal();
+              });
+            }
+        
+            // Klik di luar dialog menutup modal
+            const modal = qs(MODAL_ID);
+            if (modal) {
+              modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                  localStorage.setItem(STORAGE_KEY, '1');
+                  closeModal();
+                }
+              });
+            }
+        
+            // Tekan Escape untuk menutup
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape') {
+                localStorage.setItem(STORAGE_KEY, '1');
+                closeModal();
+              }
+            });
+        
+            // Jika banner diklik (menuju halaman promo), tandai sebagai dismissed
+            const link = qs(LINK_ID);
+            if (link) {
+              link.addEventListener('click', function () {
+                localStorage.setItem(STORAGE_KEY, '1');
+                closeModal();
+              });
+            }
+          });
+        })();
+    </script>
+
 </body>
 
 </html>
