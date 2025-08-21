@@ -2561,13 +2561,14 @@ color: var(--accent-color);
 .promo-modal {
   position: fixed;
   inset: 0;
-  display: none;                /* disembunyikan default */
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.5); /* overlay gelap transparan */
-  z-index: 9999;                /* di atas elemen lain */
+  background: transparent;   /* <- tidak ada efek gelap di belakang */
+  z-index: 9999;
 }
+
 
 .promo-modal.is-open { display: flex; }
 
