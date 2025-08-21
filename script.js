@@ -8,11 +8,28 @@ const CONFIG = {
     ACCOUNT_NUMBER: '5699 0101 1018 501',
     ACCOUNT_NAME: 'Arera Vacum Thomas',
     COUPONS: {
+
+        //event 8.8
+        'MAC88':    { type: 'percent', value: 88, maxDiscount: 800000, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACPRO88':    { type: 'percent', value: 88, maxDiscount: 1200000, minPurchase: 6000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACMAX88':    { type: 'percent', value: 88, maxDiscount: 3000000, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACULTRA88':    { type: 'percent', value: 88, maxDiscount: 4000000, minPurchase: 23000000, shippingDiscountPercent: 100, category: 'Mac' },
+
+        'IPHONE88': { type: 'percent', value: 88, maxDiscount: 2000000, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPhone' },
+        'IPHONEPRO88': { type: 'percent', value: 88, maxDiscount: 3000000, minPurchase: 10000000, shippingDiscountPercent: 100, category: 'iPhone' },
+
+        'IPAD88': { type: 'percent', value: 88, maxDiscount: 1200000, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADPRO88': { type: 'percent', value: 88, maxDiscount: 2000000, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'iPad' },
+
+        'AIRPODS88': { type: 'percent', value: 88, maxDiscount: 400000, minPurchase: 0, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODSPRO88': { type: 'percent', value: 88, maxDiscount: 800000, minPurchase: 3000000, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODSMAX88': { type: 'percent', value: 88, maxDiscount: 1500000, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'AirPods' },
+
         //mac
         'HAPPYMAC':    { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
         'MACUSER25':    { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 6300000, shippingDiscountPercent: 100, category: 'Mac' },
         'ILOVEMAC25':    { type: 'flat', value: 600000, maxDiscount: null, minPurchase: 7800000, shippingDiscountPercent: 100, category: 'Mac' },
-        'HAPPYJULY':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'HAPPYAUGUST':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
         '2025MACINTOZ': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 14299000, shippingDiscountPercent: 100, category: 'Mac' },
         'FIRSTUSER':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19599000, shippingDiscountPercent: 100, category: 'Mac' },
         'HAPPYUSER':    { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 30399000, shippingDiscountPercent: 100, category: 'Mac' },
