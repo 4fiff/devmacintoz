@@ -2556,3 +2556,55 @@ color: var(--accent-color);
     border-color: var(--button-bg);
     background-color: #fff;
 }
+
+/* ===== Promo Modal (Popup Banner) ===== */
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                /* disembunyikan default */
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5); /* overlay gelap transparan */
+  z-index: 9999;                /* di atas elemen lain */
+}
+
+.promo-modal.is-open { display: flex; }
+
+.promo-dialog {
+  position: relative;
+  width: clamp(280px, 80vw, 640px); /* responsif: hp ~80vw, desktop max 640px */
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;             /* sudut gambar membulat */
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.promo-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promo-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+}
+
+.promo-close:hover { background: rgba(0,0,0,.75); }
+
+/* Di layar besar, biar tidak terlalu kecil, boleh sedikit lebih lebar */
+@media (min-width: 992px) {
+  .promo-dialog { width: clamp(420px, 40vw, 720px); }
+}
