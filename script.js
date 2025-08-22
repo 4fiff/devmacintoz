@@ -31,17 +31,10 @@ const CONFIG = {
         'ILOVEMAC25':    { type: 'flat', value: 600000, maxDiscount: null, minPurchase: 7800000, shippingDiscountPercent: 100, category: 'Mac' },
         'HAPPYAUGUST':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
         '2025MACINTOZ': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 14299000, shippingDiscountPercent: 100, category: 'Mac' },
-        'FIRSTUSER':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19599000, shippingDiscountPercent: 100, category: 'Mac' },
-        'HAPPYUSER':    { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 30399000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACINTRUST':    { type: 'flat', value: 3000000, maxDiscount: null, minPurchase: 38799000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACOSTAHOE':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19599000, shippingDiscountPercent: 100, category: 'Mac' },
+        'HAPPYUSER':    { type: 'flat', value: 3000000, maxDiscount: null, minPurchase: 30399000, shippingDiscountPercent: 100, category: 'Mac' },
+        'PROUSER25':    { type: 'flat', value: 4500000, maxDiscount: null, minPurchase: 38799000, shippingDiscountPercent: 100, category: 'Mac' },
         
-        'MACINDO10':    { type: 'percent', value: 10, maxDiscount: 1500000, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MAC20INTOZ':   { type: 'percent', value: 20, maxDiscount: 1000000, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'ILOVEMACINTOZ':{ type: 'percent', value: 50, maxDiscount: 1000000, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACINTOZPRO':  { type: 'percent', value: 7,  maxDiscount: 5000000, minPurchase: 25000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACINTOZAIR':  { type: 'percent', value: 5,  maxDiscount: 2500000, minPurchase: 15000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'TRUSTMACINTOZ':{ type: 'percent', value: 10, maxDiscount: 5000000, minPurchase: 30000000, shippingDiscountPercent: 100, category: 'Mac' },
-
         //iphone
         'MACIPHONE25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 5999000, shippingDiscountPercent: 100, category: 'iPhone' },
         'MACIPHONEPRO25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9999000, shippingDiscountPercent: 100, category: 'iPhone' },
@@ -1221,6 +1214,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function initializeCouponPage() {
+        // Menargetkan semua container list kupon, bukan hanya satu
+        const couponLists = document.querySelectorAll('.coupon-list-page');
+        if (couponLists.length === 0) return;
+    
+        couponLists.forEach(list => {
+            list.addEventListener('click', function(event) {
+                const copyBtn = event.target.closest('.copy-coupon-btn');
+                if (!copyBtn) return;
+    
+                const codeToCopy = copyBtn.dataset.code;
+                if (!codeToCopy) return;
+    
+                navigator.clipboard.writeText(codeToCopy).then(() => {
+                    // Feedback sukses
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Tersalin';
+                    copyBtn.classList.add('copied');
+                    copyBtn.disabled = true;
+    
+                    showCustomToast(`Kode "${codeToCopy}" berhasil disalin!`);
+    
+                    // Kembali ke state semula setelah 2 detik
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHTML;
+                        copyBtn.classList.remove('copied');
+                        copyBtn.disabled = false;
+                    }, 2000);
+    
+                }).catch(err => {
+                    console.error('Gagal menyalin kode: ', err);
+                    showCustomToast('Gagal menyalin kode. Coba lagi.');
+                });
+            });
+        });
+    }
+
     const initializeApp = () => {
         checkPendingPayment();
         updateSharedUI();
@@ -1236,10 +1266,11 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (path.includes('/keranjang')) { renderCartPage(); } 
         else if (path.includes('/pembayaran')) { renderCheckoutPage(); } 
         else if (path.includes('/cara-bayar')) { renderCaraBayarPage(); } 
+        else if (path.includes('/coupon-code')) { initializeCouponPage(); }
         else if (path.endsWith('/') || path.includes('/index.html')) {
             initializeReviewSlider();
             initializeVideoControls();
-            initializePromoPopup(); // <-- Panggil fungsi pop-up di sini
+            initializePromoPopup();
         }
     };
 

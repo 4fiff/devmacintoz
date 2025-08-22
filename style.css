@@ -2641,3 +2641,120 @@ color: var(--accent-color);
         font-size: 20px;
     }
 }
+
+/* ============================================== */
+/* CSS BARU UNTUK HALAMAN DAFTAR KUPON (REVISI) */
+/* ============================================== */
+
+/* Wadah utama untuk halaman kupon */
+.coupon-list-page {
+    max-width: 1200px; /* Lebarkan max-width untuk grid */
+    margin: 20px auto;
+    display: grid;
+    /* Membuat kolom responsif, minimal 340px, maksimal 1fr */
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px; /* Jarak antar kartu */
+}
+
+/* Kartu untuk setiap kupon */
+.coupon-display-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 0; /* Hapus margin-bottom karena gap sudah menangani */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex; /* Gunakan flexbox untuk tata letak internal */
+    flex-direction: column;
+}
+
+/* Style khusus untuk kupon unggulan */
+.coupon-display-card.featured {
+    border-left: 5px solid var(--button-bg);
+}
+
+/* Header yang berisi kode kupon dan tombol salin */
+.coupon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Kode kupon */
+.coupon-display-card h4 {
+    margin: 0;
+    font-size: 20px; /* Perbesar sedikit */
+    font-family: monospace;
+    color: var(--button-bg);
+    background-color: var(--footer-bg);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Tombol Salin Kode */
+.copy-coupon-btn {
+    background-color: transparent;
+    border: 1px solid var(--button-bg);
+    color: var(--button-bg);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.copy-coupon-btn i {
+    margin-right: 5px;
+}
+
+.copy-coupon-btn:hover {
+    background-color: var(--button-bg);
+    color: white;
+}
+
+.copy-coupon-btn.copied {
+    background-color: #008a00; /* Warna hijau saat berhasil disalin */
+    color: white;
+    border-color: #008a00;
+}
+
+
+/* Deskripsi kupon */
+.coupon-display-card p {
+    margin: 4px 0;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.coupon-display-card p:not(.coupon-terms):not(.coupon-expiry) {
+    flex-grow: 1; /* Membuat deskripsi mengisi ruang kosong */
+}
+
+
+/* Syarat & ketentuan kupon */
+.coupon-display-card .coupon-terms {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--secondary-text-color);
+    font-style: italic;
+    flex-grow: 0;
+}
+
+/* Style untuk tanggal berlaku kupon */
+.coupon-expiry {
+    font-size: 13px !important;
+    color: #c50000 !important;
+    font-weight: 500;
+    margin-top: 15px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed var(--border-color);
+    font-style: normal !important;
+    flex-grow: 0;
+}
+
+.coupon-expiry i {
+    margin-right: 6px;
+    vertical-align: middle;
+}
