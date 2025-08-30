@@ -2,7 +2,7 @@ const products = [
     // Produk 1
     { 
         id: 1, kategori: 'Mac', name: 'Macbook Air 13" M4 (2024) - Sky Blue', specs: '16GB RAM, 256GB SSD', 
-        price: 15499000, stock: 8, grade: 'Baru', sku: '7PZ3X8QA', sold: 312, 
+        price: 14999000, stock: 8, grade: 'Baru', sku: '7PZ3X8QA', sold: 312, 
         images: ['images/produk/id1_7PZ3X8QA/1.webp', 'images/produk/id1_7PZ3X8QA/2.webp', 'images/produk/id1_7PZ3X8QA/3.webp', 'images/produk/id1_7PZ3X8QA/4.webp', 'images/produk/id1_7PZ3X8QA/5.webp', 'images/produk/id1_7PZ3X8QA/6.webp', 'images/produk/id1_7PZ3X8QA/7.webp', 'images/produk/id1_7PZ3X8QA/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -30,7 +30,7 @@ const products = [
     // Produk 2
     { 
         id: 2, kategori: 'Mac', name: 'Macbook Air 13" M4 (2024) - Midnight', specs: '16GB RAM, 256GB SSD', 
-        price: 15499000, stock: 3, grade: 'Baru', sku: 'R4K81NZB',  sold: 163,
+        price: 14999000, stock: 3, grade: 'Baru', sku: 'R4K81NZB',  sold: 163,
         images: ['images/produk/id2_R4K81NZB/1.webp', 'images/produk/id2_R4K81NZB/2.webp', 'images/produk/id2_R4K81NZB/3.webp', 'images/produk/id2_R4K81NZB/4.webp', 'images/produk/id2_R4K81NZB/5.webp', 'images/produk/id2_R4K81NZB/6.webp', 'images/produk/id2_R4K81NZB/7.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -58,7 +58,7 @@ const products = [
     // Produk 3
     { 
         id: 3, kategori: 'Mac', name: 'Macbook Air 15" M4 (2024) - Sky Blue', specs: '16GB RAM, 256GB SSD', 
-        price: 19599000, stock: 5, grade: 'Baru', sku: 'G7X23MLQ',  sold: 232,
+        price: 18999000, stock: 5, grade: 'Baru', sku: 'G7X23MLQ',  sold: 232,
         images: ['images/produk/id3_G7X23MLQ/1.webp', 'images/produk/id3_G7X23MLQ/2.webp', 'images/produk/id3_G7X23MLQ/3.webp', 'images/produk/id3_G7X23MLQ/4.webp', 'images/produk/id3_G7X23MLQ/5.webp', 'images/produk/id3_G7X23MLQ/6.webp', 'images/produk/id3_G7X23MLQ/7.webp', 'images/produk/id3_G7X23MLQ/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -85,7 +85,7 @@ const products = [
     // Produk 4
     { 
         id: 4, kategori: 'Mac', name: 'Macbook Air 15" M4 (2024) - Midnight', specs: '16GB RAM, 256GB SSD', 
-        price: 19599000, stock: 6, grade: 'Baru', sku: '9HFZ3Y2A',  sold: 263,
+        price: 18999000, stock: 6, grade: 'Baru', sku: '9HFZ3Y2A',  sold: 263,
         images: ['images/produk/id4_9HFZ3Y2A/1.webp', 'images/produk/id4_9HFZ3Y2A/2.webp', 'images/produk/id4_9HFZ3Y2A/3.webp', 'images/produk/id4_9HFZ3Y2A/4.webp', 'images/produk/id4_9HFZ3Y2A/5.webp', 'images/produk/id4_9HFZ3Y2A/6.webp', 'images/produk/id4_9HFZ3Y2A/7.webp', 'images/produk/id4_9HFZ3Y2A/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -246,7 +246,7 @@ const products = [
     // Produk 10
     { 
         id: 10, kategori: 'Mac', name: 'Macbook Air 13" M3 (2023) - Space Grey', specs: '16GB RAM, 256GB SSD', 
-        price: 14299000, stock: 11, grade: 'Baru', sku: 'AXZL5NQ7',  sold: 117,
+        price: 13999000, stock: 11, grade: 'Baru', sku: 'AXZL5NQ7',  sold: 117,
         images: ['images/produk/id10_AXZL5NQ7/1.webp', 'images/produk/id10_AXZL5NQ7/2.webp', 'images/produk/id10_AXZL5NQ7/3.webp', 'images/produk/id10_AXZL5NQ7/4.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M3 chip unlocks a whole new level of performance for work and play.',
@@ -1043,7 +1043,7 @@ const products = [
         id: 37,
         name: 'iPhone 16',
         kategori: 'iPhone',
-        basePrice: 13199000,
+        basePrice: 12999000,
         images: {
                 'Ultramarine': ['images/produk/id37_ip16/ip16-um-1.webp', 'images/produk/id37_ip16/ip16-um-2.webp', 'images/produk/id37_ip16/ip16-um-3.webp', 'images/produk/id37_ip16/ip16-um-4.webp'],
                 'Teal': ['images/produk/id37_ip16/ip16-te-1.webp', 'images/produk/id37_ip16/ip16-te-2.webp', 'images/produk/id37_ip16/ip16-te-3.webp', 'images/produk/id37_ip16/ip16-te-4.webp'],
@@ -1086,7 +1086,7 @@ const products = [
             id: 57,
             name: 'iPhone 16e',
             kategori: 'iPhone',
-            basePrice: 10399000,
+            basePrice: 9999000,
             images: {
                 'Black': ['images/produk/id57_ip16e/ip16e-main.webp', 'images/produk/id57_ip16e/ip16e-bk-1.webp', 'images/produk/id57_ip16e/ip16e-bk-2.webp', 'images/produk/id57_ip16e/ip16e-bk-3.webp'],
                 'White': ['images/produk/id57_ip16e/ip16e-wh-1.webp', 'images/produk/id57_ip16e/ip16e-wh-2.webp', 'images/produk/id57_ip16e/ip16e-wh-3.webp'],
@@ -1111,7 +1111,7 @@ const products = [
             id: 58,
             name: 'iPhone 15 Pro',
             kategori: 'iPhone',
-            basePrice: 15499000,
+            basePrice: 14999000,
             images: {
                 'Natural Titanium': ['images/produk/id58_ip15p/ip15p-nt-1.webp', 'images/produk/id58_ip15p/ip15p-nt-2.webp', 'images/produk/id58_ip15p/ip15p-nt-3.webp'],
                 'Blue Titanium': ['images/produk/id58_ip15p/ip15p-bt-1.webp', 'images/produk/id58_ip15p/ip15p-bt-2.webp', 'images/produk/id58_ip15p/ip15p-bt-3.webp'],
@@ -1144,7 +1144,7 @@ const products = [
         id: 38,
         name: 'iPhone 15',
         kategori: 'iPhone',
-        basePrice: 10399000,
+        basePrice: 9999000,
         images: {
                 'Blue': ['images/produk/id38_ip15/ip15-bu-1.webp', 'images/produk/id38_ip15/ip15-bu-2.webp', 'images/produk/id38_ip15/ip15-bu-3.webp'],
                 'Pink': ['images/produk/id38_ip15/ip15-pi-1.webp', 'images/produk/id38_ip15/ip15-pi-2.webp', 'images/produk/id38_ip15/ip15-pi-3.webp'],
@@ -1192,7 +1192,7 @@ const products = [
             id: 59,
             name: 'iPhone 14 Pro',
             kategori: 'iPhone',
-            basePrice: 13799000,
+            basePrice: 13599000,
             images: {
                 'Deep Purple': ['images/produk/id59_ip14p/ip14p-dp-1.webp', 'images/produk/id59_ip14p/ip14p-dp-2.webp', 'images/produk/id59_ip14p/ip14p-dp-3.webp'],
                 'Gold': ['images/produk/id59_ip14p/ip14p-go-1.webp', 'images/produk/id59_ip14p/ip14p-go-2.webp', 'images/produk/id59_ip14p/ip14p-go-3.webp'],
@@ -1228,7 +1228,7 @@ const products = [
             id: 39,
             name: 'iPhone 14',
             kategori: 'iPhone',
-            basePrice: 9199000,
+            basePrice: 8699000,
             images: {
                     'Red': ['images/produk/id39_ip14/ip14-re-1.webp'],
                     'Blue': ['images/produk/id39_ip14/ip14-bu-1.webp'],
@@ -1270,7 +1270,7 @@ const products = [
             id: 60,
             name: 'iPhone 13 Pro',
             kategori: 'iPhone',
-            basePrice: 11999000,
+            basePrice: 11899000,
             images: {
                 'Sierra Blue': ['images/produk/id60_ip13p/ip13p-sb-1.webp'],
                 'Graphite': ['images/produk/id60_ip13p/ip13p-gr-1.webp'],
@@ -1595,7 +1595,7 @@ const products = [
         id: 46,
         kategori: 'AirPods',
         name: 'AirPods Max',
-        basePrice: 7599000,
+        basePrice: 6999000,
         images: {
             'Blue': ['images/produk/id46_apm/apm_blue.webp', 'images/produk/id46_apm/6.webp', 'images/produk/id46_apm/7.webp', 'images/produk/id46_apm/8.webp', 'images/produk/id46_apm/9.webp', 'images/produk/id46_apm/10.webp'],
             'Purple': ['images/produk/id46_apm/apm_purple.webp', 'images/produk/id46_apm/6.webp', 'images/produk/id46_apm/7.webp', 'images/produk/id46_apm/8.webp', 'images/produk/id46_apm/9.webp', 'images/produk/id46_apm/10.webp'],

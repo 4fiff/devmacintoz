@@ -9,52 +9,35 @@ const CONFIG = {
     ACCOUNT_NAME: 'Arera Vacum Thomas',
     COUPONS: {
 
-        //event 8.8
-        'MAC88':    { type: 'percent', value: 88, maxDiscount: 800000, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACPRO88':    { type: 'percent', value: 88, maxDiscount: 1200000, minPurchase: 6000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACMAX88':    { type: 'percent', value: 88, maxDiscount: 3000000, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACULTRA88':    { type: 'percent', value: 88, maxDiscount: 4000000, minPurchase: 23000000, shippingDiscountPercent: 100, category: 'Mac' },
-
-        'IPHONE88': { type: 'percent', value: 88, maxDiscount: 2000000, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPhone' },
-        'IPHONEPRO88': { type: 'percent', value: 88, maxDiscount: 3000000, minPurchase: 10000000, shippingDiscountPercent: 100, category: 'iPhone' },
-
-        'IPAD88': { type: 'percent', value: 88, maxDiscount: 1200000, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPad' },
-        'IPADPRO88': { type: 'percent', value: 88, maxDiscount: 2000000, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'iPad' },
-
-        'AIRPODS88': { type: 'percent', value: 88, maxDiscount: 400000, minPurchase: 0, shippingDiscountPercent: 100, category: 'AirPods' },
-        'AIRPODSPRO88': { type: 'percent', value: 88, maxDiscount: 800000, minPurchase: 3000000, shippingDiscountPercent: 100, category: 'AirPods' },
-        'AIRPODSMAX88': { type: 'percent', value: 88, maxDiscount: 1500000, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'AirPods' },
-
         //mac
-        'HAPPYMAC':    { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACUSER25':    { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 6300000, shippingDiscountPercent: 100, category: 'Mac' },
-        'ILOVEMAC25':    { type: 'flat', value: 600000, maxDiscount: null, minPurchase: 7800000, shippingDiscountPercent: 100, category: 'Mac' },
-        'HAPPYAUGUST':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
-        '2025MACINTOZ': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 14299000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACOSTAHOE':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19599000, shippingDiscountPercent: 100, category: 'Mac' },
-        'HAPPYUSER':    { type: 'flat', value: 3000000, maxDiscount: null, minPurchase: 30399000, shippingDiscountPercent: 100, category: 'Mac' },
-        'PROUSER25':    { type: 'flat', value: 4500000, maxDiscount: null, minPurchase: 38799000, shippingDiscountPercent: 100, category: 'Mac' },
+        'IMAC25':    { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
+        'MAC25':    { type: 'flat', value: 600000, maxDiscount: null, minPurchase: 6300000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACMINI25':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACBOOK25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACBOOKPRO25':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACPRO25':    { type: 'flat', value: 3500000, maxDiscount: null, minPurchase: 30000000, shippingDiscountPercent: 100, category: 'Mac' }, 
         
         //iphone
-        'MACIPHONE25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 5999000, shippingDiscountPercent: 100, category: 'iPhone' },
-        'MACIPHONEPRO25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9999000, shippingDiscountPercent: 100, category: 'iPhone' },
-        'MACIPHONEMAX25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 11999000, shippingDiscountPercent: 100, category: 'iPhone' },
+        'IPHONE25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPhone' },
+        'IPHONEAIR25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'iPhone' },
+        'IPHONEPRO25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 12000000, shippingDiscountPercent: 100, category: 'iPhone' },
+        'IPHONEMAX25': { type: 'flat', value: 3000000, maxDiscount: null, minPurchase: 16000000, shippingDiscountPercent: 100, category: 'iPhone' },
 
         //ipad
-        'MACIPAD25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 5999000, shippingDiscountPercent: 100, category: 'iPad' },
-        'MACIPADMINI25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 7199000, shippingDiscountPercent: 100, category: 'iPad' },
-        'MACIPADAIR25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9399000, shippingDiscountPercent: 100, category: 'iPad' },
-        'MACIPADPRO25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 14999000, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPAD25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADMINI25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADAIR25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADPRO25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'iPad' },
 
         //airpods
-        'MACINPODS25': { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 1799000, shippingDiscountPercent: 100, category: 'AirPods' },
-        'MACINPODSPRO25': { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 3499000, shippingDiscountPercent: 100, category: 'AirPods' },
-        'MACINPODSMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 7599000, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODS25': { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODSPRO25': { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 3000000, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODSMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'AirPods' },
 
         //accessories
-        'MACINSSORIES25': { type: 'flat', value: 200000, maxDiscount: null, minPurchase: 2199000, shippingDiscountPercent: 100, category: 'Semua' },
-        'MACINSSORIESPRO25': { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 2999000, shippingDiscountPercent: 100, category: 'Semua' },
-        'MACINSSORIESMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 4999000, shippingDiscountPercent: 100, category: 'Semua' },
+        'ACCESSORIES25': { type: 'flat', value: 200000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Semua' },
+        'ACCESSORIESPRO25': { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 2500000, shippingDiscountPercent: 100, category: 'Semua' },
+        'ACCESSORIESMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 4500000, shippingDiscountPercent: 100, category: 'Semua' },
     },
     SHIPPING_SERVICES: ['JNE', 'J&T', 'Si Cepat'],
     SHIPPING_COSTS: {
