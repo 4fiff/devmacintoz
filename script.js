@@ -1265,14 +1265,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // 5. Tampilkan popup
             popup.classList.add('show');
 
-            // 6. Sembunyikan setelah 5 detik
+            // 6. Sembunyikan setelah 8 detik
             setTimeout(() => {
                 popup.classList.remove('show');
-            }, 5000);
+            }, 8000);
         };
 
-        // Atur interval untuk menampilkan popup (antara 2 hingga 3 menit)
-        const randomInterval = Math.floor(Math.random() * (180000 - 120000 + 1)) + 120000;
+        // Atur interval untuk menampilkan popup (antara 30 hingga 90 detik)
+        const randomInterval = Math.floor(Math.random() * (90000 - 30000 + 1)) + 30000;
         setInterval(showRandomPurchase, randomInterval);
 
         // Tampilkan popup pertama kali setelah beberapa detik
