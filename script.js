@@ -1234,48 +1234,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     function startPurchaseNotification() {
-        const popup = document.getElementById('purchase-notification-popup');
-        const popupMessage = popup.querySelector('.popup-message');
+    // FUNGSI BARU UNTUK POP-UP PEMBELIAN
+    function initializePurchasePopup() {
+        const popup = document.getElementById('purchase-popup');
+        if (!popup) return;
 
-        function showRandomPurchase() {
-            // Ambil produk dari array produk.js
+        const showRandomPurchase = () => {
+            // 1. Pilih produk secara acak
             const randomProductIndex = Math.floor(Math.random() * products.length);
-            const randomProduct = products[randomProductIndex];
+            const product = products[randomProductIndex];
             
-            // Ambil nama produk. Jika ada varian, gunakan nama utama saja.
-            const productName = randomProduct.name;
+            // 2. Tentukan gambar yang akan ditampilkan
+            let imageUrl = '';
+            if (product.variants && product.variants.length > 0) {
+                const firstColor = Object.keys(product.images)[0];
+                imageUrl = product.images[firstColor][0];
+            } else if (product.images && product.images.length > 0) {
+                imageUrl = product.images[0];
+            }
 
-            // Generate user ID acak 6 digit
-            const randomUserId = Math.floor(100000 + Math.random() * 900000);
+            // 3. Buat User ID acak
+            const randomUserId = `ID${Math.floor(100000 + Math.random() * 900000)}`;
 
-            // Perbarui teks pop-up
-            popupMessage.innerHTML = `<span>User ID${randomUserId}</span> Baru Saja Membeli <span>${productName}</span>`;
+            // 4. Update konten popup
+            popup.querySelector('.popup-icon img').src = `/${imageUrl}`;
+            popup.querySelector('.popup-icon img').alt = product.name;
+            popup.querySelector('.user-id').textContent = randomUserId;
+            popup.querySelector('.product-name').textContent = product.name;
 
-            // Tampilkan pop-up
+            // 5. Tampilkan popup
             popup.classList.add('show');
 
-            // Sembunyikan pop-up setelah 8 detik
+            // 6. Sembunyikan setelah 5 detik
             setTimeout(() => {
                 popup.classList.remove('show');
-            }, 8000);
-        }
+            }, 5000);
+        };
 
-        // Tampilkan notifikasi pertama kali setelah 10 detik
-        setTimeout(showRandomPurchase, 10000);
+        // Atur interval untuk menampilkan popup (antara 2 hingga 3 menit)
+        const randomInterval = Math.floor(Math.random() * (180000 - 120000 + 1)) + 120000;
+        setInterval(showRandomPurchase, randomInterval);
 
-        // Atur interval acak antara 2 hingga 3 menit
-        setInterval(() => {
-            const randomInterval = Math.floor(Math.random() * (180000 - 120000 + 1)) + 120000;
-            setTimeout(showRandomPurchase, 1000); // Tunggu sebentar lalu tampilkan, agar intervalnya terasa lebih alami
-        }, 120000); // Interval utama setiap 2 menit
+        // Tampilkan popup pertama kali setelah beberapa detik
+        setTimeout(showRandomPurchase, 10000); // Tampilkan setelah 10 detik
     }
+
 
     const initializeApp = () => {
         checkPendingPayment();
         updateSharedUI();
         initializeNavbar();
         initializeFilterToggle();
+        initializePurchasePopup(); // <-- PANGGIL FUNGSI BARU DI SINI
         const path = window.location.pathname;
         if (path.includes('/product/buy-macbook')) { renderProductPage('Mac'); }
         else if (path.includes('/product/buy-iphone')) { renderProductPage('iPhone');}
