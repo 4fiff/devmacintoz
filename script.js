@@ -1234,6 +1234,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+     function startPurchaseNotification() {
+        const popup = document.getElementById('purchase-notification-popup');
+        const popupMessage = popup.querySelector('.popup-message');
+
+        function showRandomPurchase() {
+            // Ambil produk dari array produk.js
+            const randomProductIndex = Math.floor(Math.random() * products.length);
+            const randomProduct = products[randomProductIndex];
+            
+            // Ambil nama produk. Jika ada varian, gunakan nama utama saja.
+            const productName = randomProduct.name;
+
+            // Generate user ID acak 6 digit
+            const randomUserId = Math.floor(100000 + Math.random() * 900000);
+
+            // Perbarui teks pop-up
+            popupMessage.innerHTML = `<span>User ID${randomUserId}</span> Baru Saja Membeli <span>${productName}</span>`;
+
+            // Tampilkan pop-up
+            popup.classList.add('show');
+
+            // Sembunyikan pop-up setelah 8 detik
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 8000);
+        }
+
+        // Tampilkan notifikasi pertama kali setelah 10 detik
+        setTimeout(showRandomPurchase, 10000);
+
+        // Atur interval acak antara 2 hingga 3 menit
+        setInterval(() => {
+            const randomInterval = Math.floor(Math.random() * (180000 - 120000 + 1)) + 120000;
+            setTimeout(showRandomPurchase, 1000); // Tunggu sebentar lalu tampilkan, agar intervalnya terasa lebih alami
+        }, 120000); // Interval utama setiap 2 menit
+    }
+
     const initializeApp = () => {
         checkPendingPayment();
         updateSharedUI();
