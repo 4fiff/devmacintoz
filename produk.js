@@ -2,7 +2,7 @@ const products = [
     // Produk 1
     { 
         id: 1, kategori: 'Mac', name: 'Macbook Air 13" M4 (2024) - Sky Blue', specs: '16GB RAM, 256GB SSD', 
-        price: 14999000, stock: 8, grade: 'Baru', sku: '7PZ3X8QA', sold: 312, 
+        price: 14999000, stock: 8, grade: 'Baru', sku: '7PZ3X8QA', sold: 312, berat: 2240,
         images: ['images/produk/id1_7PZ3X8QA/1.webp', 'images/produk/id1_7PZ3X8QA/2.webp', 'images/produk/id1_7PZ3X8QA/3.webp', 'images/produk/id1_7PZ3X8QA/4.webp', 'images/produk/id1_7PZ3X8QA/5.webp', 'images/produk/id1_7PZ3X8QA/6.webp', 'images/produk/id1_7PZ3X8QA/7.webp', 'images/produk/id1_7PZ3X8QA/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -30,7 +30,7 @@ const products = [
     // Produk 2
     { 
         id: 2, kategori: 'Mac', name: 'Macbook Air 13" M4 (2024) - Midnight', specs: '16GB RAM, 256GB SSD', 
-        price: 14999000, stock: 3, grade: 'Baru', sku: 'R4K81NZB',  sold: 163,
+        price: 14999000, stock: 3, grade: 'Baru', sku: 'R4K81NZB',  sold: 163, berat: 2240,
         images: ['images/produk/id2_R4K81NZB/1.webp', 'images/produk/id2_R4K81NZB/2.webp', 'images/produk/id2_R4K81NZB/3.webp', 'images/produk/id2_R4K81NZB/4.webp', 'images/produk/id2_R4K81NZB/5.webp', 'images/produk/id2_R4K81NZB/6.webp', 'images/produk/id2_R4K81NZB/7.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -58,7 +58,7 @@ const products = [
     // Produk 3
     { 
         id: 3, kategori: 'Mac', name: 'Macbook Air 15" M4 (2024) - Sky Blue', specs: '16GB RAM, 256GB SSD', 
-        price: 18999000, stock: 5, grade: 'Baru', sku: 'G7X23MLQ',  sold: 232,
+        price: 18999000, stock: 5, grade: 'Baru', sku: 'G7X23MLQ',  sold: 232, berat: 2510,
         images: ['images/produk/id3_G7X23MLQ/1.webp', 'images/produk/id3_G7X23MLQ/2.webp', 'images/produk/id3_G7X23MLQ/3.webp', 'images/produk/id3_G7X23MLQ/4.webp', 'images/produk/id3_G7X23MLQ/5.webp', 'images/produk/id3_G7X23MLQ/6.webp', 'images/produk/id3_G7X23MLQ/7.webp', 'images/produk/id3_G7X23MLQ/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -85,7 +85,7 @@ const products = [
     // Produk 4
     { 
         id: 4, kategori: 'Mac', name: 'Macbook Air 15" M4 (2024) - Midnight', specs: '16GB RAM, 256GB SSD', 
-        price: 18999000, stock: 6, grade: 'Baru', sku: '9HFZ3Y2A',  sold: 263,
+        price: 18999000, stock: 6, grade: 'Baru', sku: '9HFZ3Y2A',  sold: 263, berat: 2510,
         images: ['images/produk/id4_9HFZ3Y2A/1.webp', 'images/produk/id4_9HFZ3Y2A/2.webp', 'images/produk/id4_9HFZ3Y2A/3.webp', 'images/produk/id4_9HFZ3Y2A/4.webp', 'images/produk/id4_9HFZ3Y2A/5.webp', 'images/produk/id4_9HFZ3Y2A/6.webp', 'images/produk/id4_9HFZ3Y2A/7.webp', 'images/produk/id4_9HFZ3Y2A/8.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M4 chip unlocks a whole new level of performance for work and play. And it now comes in a stunning Sky Blue color.',
@@ -112,7 +112,7 @@ const products = [
     // Produk 5
     { 
         id: 5, kategori: 'Mac', name: 'Macbook Pro 14" M4 (2024) - Space Black', specs: '16GB RAM, 512GB SSD', 
-        price: 23499000, stock: 2, grade: 'Baru', sku: 'W1B8PZ6K', sold: 112,
+        price: 23499000, stock: 2, grade: 'Baru', sku: 'W1B8PZ6K', sold: 112, berat: 2550,
         images: ['images/produk/id5_W1B8PZ6K/1.webp', 'images/produk/id5_W1B8PZ6K/2.webp', 'images/produk/id5_W1B8PZ6K/3.webp', 'images/produk/id5_W1B8PZ6K/4.webp', 'images/produk/id5_W1B8PZ6K/5.webp', 'images/produk/id5_W1B8PZ6K/6.webp', 'images/produk/id5_W1B8PZ6K/7.webp', 'images/produk/id5_W1B8PZ6K/8.webp'], 
         description: {
             intro: 'MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible.',
@@ -138,7 +138,7 @@ const products = [
     // Produk 6
     { 
         id: 6, kategori: 'Mac', name: 'Macbook Pro 14" M4 Pro (2024) - Space Black', specs: '24GB RAM, 512GB SSD', 
-        price: 30399000, stock: 7, grade: 'Baru', sku: 'YZ93LMX4',  sold: 153,
+        price: 30399000, stock: 7, grade: 'Baru', sku: 'YZ93LMX4',  sold: 153, berat: 2610,
         images: ['images/produk/id6_YZ93LMX4/1.webp', 'images/produk/id6_YZ93LMX4/2.webp', 'images/produk/id6_YZ93LMX4/3.webp', 'images/produk/id6_YZ93LMX4/4.webp', 'images/produk/id6_YZ93LMX4/5.webp', 'images/produk/id6_YZ93LMX4/6.webp', 'images/produk/id6_YZ93LMX4/7.webp', 'images/produk/id6_YZ93LMX4/8.webp'], 
         description: {
             intro: 'MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible.',
@@ -165,7 +165,7 @@ const products = [
     // Produk 7
     { 
         id: 7, kategori: 'Mac', name: 'Macbook Pro 14" M4 Max (2024) - Space Black', specs: '36GB RAM, 1TB SSD', 
-        price: 48999000, stock: 6, grade: 'Baru', sku: 'KQ7AZ813',  sold: 112,
+        price: 48999000, stock: 6, grade: 'Baru', sku: 'KQ7AZ813',  sold: 112, berat: 2610,
         images: ['images/produk/id7_KQ7AZ813/1.webp', 'images/produk/id7_KQ7AZ813/2.webp', 'images/produk/id7_KQ7AZ813/3.webp', 'images/produk/id7_KQ7AZ813/4.webp', 'images/produk/id7_KQ7AZ813/5.webp', 'images/produk/id7_KQ7AZ813/6.webp', 'images/produk/id7_KQ7AZ813/7.webp', 'images/produk/id7_KQ7AZ813/8.webp'], 
         description: {
             intro: 'MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible.',
@@ -192,7 +192,7 @@ const products = [
     // Produk 8
     { 
         id: 8, kategori: 'Mac', name: 'Macbook Pro 16" M4 Pro (2024) - Space Black', specs: '24GB RAM, 512GB SSD', 
-        price: 38799000, stock: 7, grade: 'Baru', sku: '6NVB4XPQ',  sold: 201,
+        price: 38799000, stock: 7, grade: 'Baru', sku: '6NVB4XPQ',  sold: 201, berat: 3140,
         images: ['images/produk/id8_6NVB4XPQ/1.webp', 'images/produk/id8_6NVB4XPQ/2.webp', 'images/produk/id8_6NVB4XPQ/3.webp', 'images/produk/id8_6NVB4XPQ/4.webp', 'images/produk/id8_6NVB4XPQ/5.webp', 'images/produk/id8_6NVB4XPQ/6.webp', 'images/produk/id8_6NVB4XPQ/7.webp', 'images/produk/id8_6NVB4XPQ/8.webp'], 
         description: {
             intro: 'MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible.',
@@ -219,7 +219,7 @@ const products = [
     // Produk 9
     { 
         id: 9, kategori: 'Mac', name: 'Macbook Pro 16" M4 Max (2024) - Space Black', specs: '36GB RAM, 1TB SSD', 
-        price: 53799000, stock: 4, grade: 'Baru', sku: 'M29XQY8L',  sold: 142,
+        price: 53799000, stock: 4, grade: 'Baru', sku: 'M29XQY8L',  sold: 142, berat: 3150,
         images: ['images/produk/id9_M29XQY8L/1.webp', 'images/produk/id9_M29XQY8L/2.webp', 'images/produk/id9_M29XQY8L/3.webp', 'images/produk/id9_M29XQY8L/4.webp', 'images/produk/id9_M29XQY8L/5.webp', 'images/produk/id9_M29XQY8L/6.webp', 'images/produk/id9_M29XQY8L/7.webp', 'images/produk/id9_M29XQY8L/8.webp'], 
         description: {
             intro: 'MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible.',
@@ -246,7 +246,7 @@ const products = [
     // Produk 10
     { 
         id: 10, kategori: 'Mac', name: 'Macbook Air 13" M3 (2023) - Space Grey', specs: '16GB RAM, 256GB SSD', 
-        price: 13999000, stock: 11, grade: 'Baru', sku: 'AXZL5NQ7',  sold: 117,
+        price: 13999000, stock: 11, grade: 'Baru', sku: 'AXZL5NQ7',  sold: 117, berat: 2240,
         images: ['images/produk/id10_AXZL5NQ7/1.webp', 'images/produk/id10_AXZL5NQ7/2.webp', 'images/produk/id10_AXZL5NQ7/3.webp', 'images/produk/id10_AXZL5NQ7/4.webp'], 
         description: {
             intro: 'MacBook Air is the world’s most popular laptop for a reason’s. It delivers up to 18 hours of battery life. The M3 chip unlocks a whole new level of performance for work and play.',
@@ -272,7 +272,7 @@ const products = [
     // Produk 11
     { 
         id: 11, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2016) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 5600000, stock: 3, grade: 'A', sku: '7CCF0VDG',  sold: 72,
+        price: 5600000, stock: 3, grade: 'A', sku: '7CCF0VDG',  sold: 72, berat: 2830,
         images: ['images/produk/id11_7CCF0VDG/1.webp', 'images/produk/id11_7CCF0VDG/2.webp', 'images/produk/id11_7CCF0VDG/3.webp', 'images/produk/id11_7CCF0VDG/4.webp', 'images/produk/id11_7CCF0VDG/5.webp', 'images/produk/id11_7CCF0VDG/6.webp', 'images/produk/id11_7CCF0VDG/7.webp'], 
         description: {
             intro: 'MacBook Pro ini adalah pilihan tepat bagi Anda yang mencari laptop bertenaga dengan harga terjangkau. Dapur pacunya menggunakan prosesor Intel Core i7 yang terbukti andal untuk berbagai tugas berat. Kondisinya pun sangat istimewa dengan fisik 95% mulus dan kesehatan baterai terjaga di atas 90%.',
@@ -299,7 +299,7 @@ const products = [
     // Produk 12
     { 
         id: 12, kategori: 'Mac', name: 'Macbook Air 13" M1 (2020) - RoseGold', specs: '8GB RAM, 256GB SSD', 
-        price: 8100000, stock: 6, grade: 'A', sku: '7CLL02GD',  sold: 32,
+        price: 8100000, stock: 6, grade: 'A', sku: '7CLL02GD',  sold: 32, berat: 2290,
         images: ['images/produk/id12_7CLL02GD/1.webp', 'images/produk/id12_7CLL02GD/2.webp', 'images/produk/id12_7CLL02GD/3.webp', 'images/produk/id12_7CLL02GD/4.webp', 'images/produk/id12_7CLL02GD/5.webp', 'images/produk/id12_7CLL02GD/6.webp', 'images/produk/id12_7CLL02GD/7.webp'], 
         description: {
             intro: 'Rasakan revolusi performa dengan MacBook Air M1 (2020). Chip M1 super cepat ini menawarkan kinerja luar biasa dan daya tahan baterai hingga 18 jam, semua dalam desain tipis yang senyap tanpa kipas. Unit ini dalam kondisi istimewa dengan fisik 95% mulus dan Battery Health 100% (CC rendah: 69), siap menjadi andalan Anda untuk produktivitas di mana saja.',
@@ -329,7 +329,7 @@ const products = [
     // Produk 13
     { 
         id: 13, kategori: 'Mac', name: 'Macbook Pro 13" M1 (2020) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 9000000, stock: 4, grade: 'A', sku: '7RCF3DWH',  sold: 58,
+        price: 9000000, stock: 4, grade: 'A', sku: '7RCF3DWH',  sold: 58, berat: 2400,
         images: ['images/produk/id13_7RCF3DWH/1.webp', 'images/produk/id13_7RCF3DWH/2.webp', 'images/produk/id13_7RCF3DWH/3.webp', 'images/produk/id13_7RCF3DWH/4.webp', 'images/produk/id13_7RCF3DWH/5.webp', 'images/produk/id13_7RCF3DWH/6.webp', 'images/produk/id13_7RCF3DWH/7.webp'], 
         description: {
             intro: 'Pilihan tepat untuk mendapatkan performa level Pro dalam kondisi istimewa. Berbeda dari MacBook Air, model Pro ini dilengkapi kipas pendingin untuk menjaga performa puncak tetap konsisten dan Touch Bar untuk alur kerja yang lebih efisien. Kondisi fisik produk 95% mulus dan yang terpenting, dibekali baterai baru (CC: 13), memberikan Anda performa dan daya tahan yang terasa seperti baru.',
@@ -357,7 +357,7 @@ const products = [
     // Produk 14
     { 
         id: 14, kategori: 'Mac', name: 'MacBook Air 13" M1 (2020) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 8000000, stock: 5, grade: 'A', sku: '7CLL1HBK',  sold: 80,
+        price: 8000000, stock: 5, grade: 'A', sku: '7CLL1HBK',  sold: 80, berat: 2290,
         images: ['images/produk/id14_7CLL1HBK/1.webp', 'images/produk/id14_7CLL1HBK/2.webp', 'images/produk/id14_7CLL1HBK/3.webp', 'images/produk/id14_7CLL1HBK/4.webp', 'images/produk/id14_7CLL1HBK/5.webp', 'images/produk/id14_7CLL1HBK/6.webp'], 
         description: {
             intro: 'Pilihan cerdas untuk performa dan portabilitas. MacBook Air M1 ini memiliki kondisi fisik 95% mulus dan kesehatan baterai 94%. Dengan harga terjangkau, Anda mendapatkan perangkat andal untuk segala kebutuhan, dari bekerja hingga hiburan, tanpa kompromi pada kualitas.',
@@ -386,7 +386,7 @@ const products = [
     // Produk 15
     { 
         id: 15, kategori: 'Mac', name: '15MacBook Pro 13" Intel Core i7 (2018) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 5750000, stock: 3, grade: 'A', sku: 'OMOTA0GR',  sold: 41,
+        price: 5750000, stock: 3, grade: 'A', sku: 'OMOTA0GR',  sold: 41, berat: 2830,
         images: ['images/produk/id15_OMOTA0GR/1.webp', 'images/produk/id15_OMOTA0GR/2.webp', 'images/produk/id15_OMOTA0GR/3.webp', 'images/produk/id15_OMOTA0GR/4.webp', 'images/produk/id15_OMOTA0GR/5.webp'], 
         description: {
             intro: 'Dapatkan MacBook Pro 15-inch spek tinggi dengan kondisi istimewa. Performa andal dari Intel i7, RAM 16GB, dan SSD 512GB. Fisik 95% mulus, lengkap dengan Touch Bar, dan baterai prima. Pilihan hemat untuk tenaga komputasi level profesional.',
@@ -414,7 +414,7 @@ const products = [
     // Produk 16
     { 
         id: 16, kategori: 'Mac', name: 'Macbook Pro 13" Intel Core i5 (2019) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 6300000, stock: 6, grade: 'A', sku: '7CTH4QBL',  sold: 29,
+        price: 6300000, stock: 6, grade: 'A', sku: '7CTH4QBL',  sold: 29, berat: 2370,
         images: ['images/produk/id16_7CTH4QBL/1.webp', 'images/produk/id16_7CTH4QBL/2.webp', 'images/produk/id16_7CTH4QBL/3.webp', 'images/produk/id16_7CTH4QBL/4.webp', 'images/produk/id16_7CTH4QBL/5.webp', 'images/produk/id16_7CTH4QBL/6.webp', 'images/produk/id16_7CTH4QBL/7.webp'], 
         description: {
             intro: 'Dapatkan MacBook Pro 2019 dengan kondisi istimewa seperti baru. Fisik sangat terawat 95% mulus, dan baterai dalam kondisi sempurna di 100% (CC rendah: 98). Nilai terbaik untuk Anda yang mencari laptop Apple andal dengan performa Intel i5 untuk aktivitas harian.',
@@ -441,7 +441,7 @@ const products = [
     // Produk 17
     { 
         id: 17, kategori: 'Mac', name: 'Macbook Pro 14" M1 Pro (2021) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 15300000, stock: 4, grade: 'A', sku: '7RHAEOWD',  sold: 65,
+        price: 15300000, stock: 4, grade: 'A', sku: '7RHAEOWD',  sold: 65, berat: 2600,
         images: ['images/produk/id17_7RHAEOWD/1.webp', 'images/produk/id17_7RHAEOWD/2.webp', 'images/produk/id17_7RHAEOWD/3.webp', 'images/produk/id17_7RHAEOWD/4.webp', 'images/produk/id17_7RHAEOWD/5.webp', 'images/produk/id17_7RHAEOWD/6.webp', 'images/produk/id17_7RHAEOWD/7.webp'], 
         description: {
             intro: 'Kesempatan langka: MacBook Pro 14" M1 Pro dalam kondisi sempurna. Fisik 100% mulus, baterai 100% (CC 11), seperti membuka unit baru. Nilai tak terkalahkan untuk performa profesional, layar XDR 120Hz, dan port lengkap dengan harga jauh lebih hemat.',
@@ -471,7 +471,7 @@ const products = [
     // Produk 18
     { 
         id: 18, kategori: 'Mac', name: 'MacBook Air 13" M1 (2020) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 7800000, stock: 2, grade: 'B', sku: 'OMHA9TBL',  sold: 47,
+        price: 7800000, stock: 2, grade: 'B', sku: 'OMHA9TBL',  sold: 47, berat: 2290,
         images: ['images/produk/id18_OMHA9TBL/1.webp', 'images/produk/id18_OMHA9TBL/2.webp', 'images/produk/id18_OMHA9TBL/3.webp', 'images/produk/id18_OMHA9TBL/4.webp', 'images/produk/id18_OMHA9TBL/5.webp', 'images/produk/id18_OMHA9TBL/6.webp', 'images/produk/id18_OMHA9TBL/7.webp', ], 
         description: {
             intro: 'Pilihan hemat untuk performa M1 yang fenomenal. MacBook Air ini dalam kondisi baik (fisik 90% mulus) dan baterai sangat sehat di 95%. Nikmati kecepatan, desain tipis, dan ketahanan baterai hingga 16 jam. Nilai terbaik untuk menunjang semua aktivitas Anda.',
@@ -501,7 +501,7 @@ const products = [
     // Produk 19
     { 
         id: 19, kategori: 'Mac', name: 'Macbook Pro 13" Intel Core i5 (2018) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 6400000, stock: 3, grade: 'A', sku: '7RLLD8WO',  sold: 37,
+        price: 6400000, stock: 3, grade: 'A', sku: '7RLLD8WO',  sold: 37, berat: 2370,
         images: ['images/produk/id19_7RLLD8WO/1.webp', 'images/produk/id19_7RLLD8WO/2.webp', 'images/produk/id19_7RLLD8WO/3.webp', 'images/produk/id19_7RLLD8WO/4.webp', 'images/produk/id19_7RLLD8WO/5.webp', 'images/produk/id19_7RLLD8WO/6.webp'], 
         description: {
             intro: 'Pilihan cerdas untuk merasakan pengalaman Pro. MacBook Pro 2018 ini dilengkapi Touch Bar dan ditenagai Intel i5. Kondisinya istimewa dengan fisik 95% mulus dan kesehatan baterai 93%. Performa dan fitur premium dalam satu paket bernilai tinggi.',
@@ -530,7 +530,7 @@ const products = [
     // Produk 20
     { 
         id: 20, kategori: 'Mac', name: 'MacBook Air 13" M1 (2020) - RoseGold', specs: '8GB RAM, 256GB SSD', 
-        price: 8250000, stock: 5, grade: 'A', sku: '7CHKJ1TP',  sold: 76,
+        price: 8250000, stock: 5, grade: 'A', sku: '7CHKJ1TP',  sold: 76, berat: 2290,
         images: ['images/produk/id20_7CHKJ1TP/1.webp', 'images/produk/id20_7CHKJ1TP/2.webp', 'images/produk/id20_7CHKJ1TP/3.webp', 'images/produk/id20_7CHKJ1TP/4.webp', 'images/produk/id20_7CHKJ1TP/5.webp', 'images/produk/id20_7CHKJ1TP/6.webp', 'images/produk/id20_7CHKJ1TP/7.webp', 'images/produk/id20_7CHKJ1TP/8.webp'], 
         description: {
             intro: 'Dapatkan MacBook Air M1 RoseGold dalam kondisi mendekati baru. Fisik terawat 95% mulus dengan kesehatan baterai istimewa 99% (CC sangat rendah: 69). Nilai terbaik untuk performa M1 yang cepat dan sunyi, ideal untuk menunjang gaya hidup dinamis Anda.',
@@ -558,7 +558,7 @@ const products = [
     // Produk 21
     { 
         id: 21, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2018) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 6300000, stock: 2, grade: 'A', sku: 'OMHZR7YL',  sold: 59,
+        price: 6300000, stock: 2, grade: 'A', sku: 'OMHZR7YL',  sold: 59, berat: 2830,
         images: ['images/produk/id21_OMHZR7YL/1.webp', 'images/produk/id21_OMHZR7YL/2.webp', 'images/produk/id21_OMHZR7YL/3.webp', 'images/produk/id21_OMHZR7YL/4.webp', 'images/produk/id21_OMHZR7YL/5.webp'], 
         description: {
             intro: 'Nilai tinggi untuk profesional. MacBook Pro 15-inch ini ditenagai Intel i7, RAM 16GB, dan SSD 512GB untuk tugas berat. Kondisi istimewa dengan fisik 95% mulus dan kesehatan baterai 97%. Dapatkan performa Pro sejati dengan harga yang sangat cerdas.',
@@ -588,7 +588,7 @@ const products = [
     // Produk 22
     { 
         id: 22, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2018) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 6600000, stock: 4, grade: 'A', sku: '7RHADMTP',  sold: 28,
+        price: 6600000, stock: 4, grade: 'A', sku: '7RHADMTP',  sold: 28, berat: 2830,
         images: ['images/produk/id22_7RHADMTP/1.webp', 'images/produk/id22_7RHADMTP/2.webp', 'images/produk/id22_7RHADMTP/3.webp', 'images/produk/id22_7RHADMTP/4.webp', 'images/produk/id22_7RHADMTP/5.webp', 'images/produk/id22_7RHADMTP/6.webp', 'images/produk/id22_7RHADMTP/7.webp'], 
         description: {
             intro: 'Performa tinggi, harga menarik. MacBook Pro 15-inch ini siap bekerja keras dengan Intel i7, RAM 16GB, dan SSD 512GB. Kondisinya istimewa, fisik 95% mulus dan baterai sangat sehat di 95%. Nilai sempurna untuk profesional yang butuh keandalan.',
@@ -616,7 +616,7 @@ const products = [
     // Produk 23
     { 
         id: 23, kategori: 'Mac', name: 'Macbook Pro 13" Intel Core i7 (2015) - Silver', specs: '8GB RAM, 512GB SSD', 
-        price: 5200000, stock: 0, grade: 'B', sku: '7ROT12BK', sold: 84,
+        price: 5200000, stock: 0, grade: 'B', sku: '7ROT12BK', sold: 84, berat: 2580,
         images: ['images/produk/id23_7ROT12BK/1.webp', 'images/produk/id23_7ROT12BK/2.webp', 'images/produk/id23_7ROT12BK/3.webp', 'images/produk/id23_7ROT12BK/4.webp', 'images/produk/id23_7ROT12BK/5.webp', 'images/produk/id23_7ROT12BK/6.webp', 'images/produk/id23_7ROT12BK/7.webp', 'images/produk/id23_7ROT12BK/8.webp'], 
         description: {
             intro: 'MacBook Pro 2015, sebuah workhorse andal dengan spek upgrade Core i7 dan SSD 512GB. Baterai sangat sehat (CC 69) siap untuk kerja panjang. Ada dent kecil wajar pemakaian, namun performanya menawarkan nilai terbaik di kelasnya. Pilihan hemat dan bertenaga.',
@@ -640,7 +640,7 @@ const products = [
     // Produk 24
     { 
         id: 24, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2017) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 5100000, stock: 3, grade: 'A', sku: '7RCF3EBK',  sold: 34,
+        price: 5100000, stock: 3, grade: 'A', sku: '7RCF3EBK',  sold: 34, berat: 2830,
         images: ['images/produk/id24_7RCF3EBK/1.webp', 'images/produk/id24_7RCF3EBK/2.webp', 'images/produk/id24_7RCF3EBK/3.webp', 'images/produk/id24_7RCF3EBK/4.webp', 'images/produk/id24_7RCF3EBK/5.webp'], 
         description: {
             intro: 'Sebuah powerhouse sejati. MacBook Pro 15" ini punya spek monster: Core i7, RAM 16GB, SSD 512GB, dan Dual VGA (AMD). Kondisi fisik 90% mulus dengan baterai yang sangat awet untuk kerja berat. Nilai terbaik untuk performa grafis dan komputasi profesional.',
@@ -668,7 +668,7 @@ const products = [
     // Produk 25
     { 
         id: 25, kategori: 'Mac', name: 'Macbook Air 13" Intel Core i5 (2019) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 5200000, stock: 3, grade: 'A', sku: '7RHX3GBK',  sold: 69,
+        price: 5200000, stock: 3, grade: 'A', sku: '7RHX3GBK',  sold: 69, berat: 2250,
         images: ['images/produk/id25_7RHX3GBK/1.webp', 'images/produk/id25_7RHX3GBK/2.webp', 'images/produk/id25_7RHX3GBK/3.webp', 'images/produk/id25_7RHX3GBK/4.webp', 'images/produk/id25_7RHX3GBK/5.webp', 'images/produk/id25_7RHX3GBK/6.webp'], 
         description: {
             intro: 'Nilai tak terkalahkan untuk MacBook Air 2019. Unit ini punya RAM 16GB dan SSD 512GB, jauh di atas standar. Kondisi fisik 95% mulus dan baterai 92% sangat prima. Pilihan sempurna untuk yang butuh kecepatan dan kapasitas ekstra.',
@@ -697,7 +697,7 @@ const products = [
     // Produk 26
     { 
         id: 26, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2018) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 6900000, stock: 4, grade: 'A', sku: 'OMHZR7BR',  sold: 53,
+        price: 6900000, stock: 4, grade: 'A', sku: 'OMHZR7BR',  sold: 53, berat: 2830,
         images: ['images/produk/id26_OMHZR7BR/1.webp', 'images/produk/id26_OMHZR7BR/2.webp', 'images/produk/id26_OMHZR7BR/3.webp', 'images/produk/id26_OMHZR7BR/4.webp', 'images/produk/id26_OMHZR7BR/5.webp', 'images/produk/id26_OMHZR7BR/6.webp', 'images/produk/id26_OMHZR7BR/7.webp'], 
         description: {
             intro: 'Kekuatan Pro untuk profesional. MacBook Pro 15-inch ini dibekali spek tinggi (i7/16GB/512GB) untuk performa maksimal. Kondisi fisik 90% mulus dengan kesehatan baterai sangat prima di 92%. Nilai terbaik untuk menaklukkan semua pekerjaan berat Anda dengan andal.',
@@ -727,7 +727,7 @@ const products = [
     // Produk 27
     { 
         id: 27, kategori: 'Mac', name: 'Macbook Air 13" Intel Core i3 (2020) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 6300000, stock: 4, grade: 'A', sku: '7RCF3DBK',  sold: 62,
+        price: 6300000, stock: 4, grade: 'A', sku: '7RCF3DBK',  sold: 62, berat: 2290,
         images: ['images/produk/id27_7RCF3DBK/1.webp', 'images/produk/id27_7RCF3DBK/2.webp', 'images/produk/id27_7RCF3DBK/3.webp', 'images/produk/id27_7RCF3DBK/4.webp', 'images/produk/id27_7RCF3DBK/5.webp', 'images/produk/id27_7RCF3DBK/6.webp'], 
         description: {
             intro: 'Nilai terbaik untuk MacBook Air 2020. Dengan kondisi fisik 95% mulus dan baterai sehat 89%, laptop ini menawarkan performa kencang untuk harganya. Sangat ideal dan hemat untuk mahasiswa atau pekerjaan ringan sehari-hari. Desain tipis, ringan, dan modern.',
@@ -753,7 +753,7 @@ const products = [
     // Produk 28
     { 
         id: 28, kategori: 'Mac', name: 'Macbook Pro 15" Intel Core i7 (2019) - Space Grey', specs: '16GB RAM, 512GB SSD', 
-        price: 7300000, stock: 5, grade: 'A', sku: '7CHKCYBK',  sold: 45,
+        price: 7300000, stock: 5, grade: 'A', sku: '7CHKCYBK',  sold: 45, berat: 2830,
         images: ['images/produk/id28_7CHKCYBK/1.webp', 'images/produk/id28_7CHKCYBK/2.webp', 'images/produk/id28_7CHKCYBK/3.webp', 'images/produk/id28_7CHKCYBK/4.webp', 'images/produk/id28_7CHKCYBK/5.webp', 'images/produk/id28_7CHKCYBK/6.webp'], 
         description: {
             intro: 'Powerhouse untuk para profesional. MacBook Pro 15-inch 2019 ini punya spek jawara: i7, 16GB RAM, 512GB SSD, dan grafis ganda AMD Radeon. Kondisi fisik 90% mulus dengan baterai 93% prima. Nilai sempurna untuk semua kebutuhan kreatif dan teknis Anda.',
@@ -784,7 +784,7 @@ const products = [
     // Produk 29
     { 
         id: 29, kategori: 'Mac', name: 'Macbook Pro 13" Intel Core i5 (2017) - Silver', specs: '8GB RAM, 256GB SSD', 
-        price: 4800000, stock: 0, grade: 'A', sku: 'OMHA44BK',  sold: 77,
+        price: 4800000, stock: 0, grade: 'A', sku: 'OMHA44BK',  sold: 77, berat: 2370,
         images: ['images/produk/id29_OMHA44BK/1.webp', 'images/produk/id29_OMHA44BK/2.webp', 'images/produk/id29_OMHA44BK/3.webp', 'images/produk/id29_OMHA44BK/4.webp', 'images/produk/id29_OMHA44BK/5.webp', 'images/produk/id29_OMHA44BK/6.webp'], 
         description: {
             intro: 'Kesempatan langka: MacBook Pro 2017 dengan kondisi baterai seperti baru (BH 99%, CC 122). Fisik sangat terawat 95% mulus. Ditenagai Intel i5, ini adalah nilai terbaik untuk mendapatkan laptop Pro yang andal dan awet dengan harga sangat terjangkau.',
@@ -813,7 +813,7 @@ const products = [
     // Produk 30
     { 
         id: 30, kategori: 'Mac', name: 'Macbook Pro 13" Intel Core i7 (2016) - Space Grey', specs: '16GB RAM, 256GB SSD', 
-        price: 5100000, stock: 2, grade: 'A', sku: 'OMLL6QWT',  sold: 39,
+        price: 5100000, stock: 2, grade: 'A', sku: 'OMLL6QWT',  sold: 39, berat: 2370,
         images: ['images/produk/id30_OMLL6QWT/1.webp', 'images/produk/id30_OMLL6QWT/2.webp', 'images/produk/id30_OMLL6QWT/3.webp', 'images/produk/id30_OMLL6QWT/4.webp', 'images/produk/id30_OMLL6QWT/5.webp'], 
         description: {
             intro: 'Dapatkan performa Pro bertenaga dengan MacBook Pro 2016 (i7/16GB RAM). Kondisi istimewa, fisik 95% mulus dan baterai 95% prima. Pilihan cerdas untuk pekerjaan yang butuh kecepatan lebih tanpa menguras kantong. Kualitas dan keandalan terjamin.',
@@ -842,7 +842,7 @@ const products = [
     // Produk 31
     { 
         id: 31, kategori: 'Mac', name: 'Macbook Air 13" Intel Core i5 (2018) - RoseGold', specs: '8GB RAM, 256GB SSD', 
-        price: 5750000, stock: 1, grade: 'A', sku: '7RHASNGR',  sold: 25,
+        price: 5750000, stock: 1, grade: 'A', sku: '7RHASNGR',  sold: 25, berat: 2250,
         images: ['images/produk/id31_7RHASNGR/1.webp', 'images/produk/id31_7RHASNGR/2.webp', 'images/produk/id31_7RHASNGR/3.webp', 'images/produk/id31_7RHASNGR/4.webp', 'images/produk/id31_7RHASNGR/5.webp', 'images/produk/id31_7RHASNGR/6.webp', 'images/produk/id31_7RHASNGR/7.webp'], 
         description: {
             intro: 'Seperti baru! MacBook Air 2018 Rose Gold dengan kondisi baterai sempurna 100% (CC sangat rendah: 53). Fisik 95% mulus, ditenagai Intel i5. Ini adalah nilai terbaik untuk mendapatkan laptop Apple yang terasa baru dengan daya tahan baterai maksimal.',
@@ -869,7 +869,7 @@ const products = [
     // Produk 32
     { 
         id: 32, kategori: 'Mac', name: 'Macbook Air 13" Intel Core i5 (2017) - Silver', specs: '8GB RAM, 128GB SSD', 
-        price: 2100000, stock: 0, grade: 'B', sku: '7RLLD8WH', sold: 22,
+        price: 2100000, stock: 0, grade: 'B', sku: '7RLLD8WH', sold: 22, berat: 2350,
         images: ['images/produk/id32_7RLLD8WH/1.webp', 'images/produk/id32_7RLLD8WH/2.webp', 'images/produk/id32_7RLLD8WH/3.webp', 'images/produk/id32_7RLLD8WH/4.webp', 'images/produk/id32_7RLLD8WH/5.webp'], 
         description: {
             intro: 'Pilihan paling terjangkau untuk masuk ke ekosistem Apple. MacBook Air 2017 ini ideal untuk tugas ringan, Browse, dan mengetik. Kondisi fisik 90% mulus (Grade B) dengan baterai normal. Sebuah laptop andal yang menawarkan nilai luar biasa dengan harga sangat hemat.',
@@ -900,7 +900,7 @@ const products = [
     // Produk 33
     { 
         id: 33, kategori: 'Mac', name: 'Macbook Air 13" M2 (2022) - Silver', specs: '8GB RAM, 256GB SSD', 
-        price: 11200000, stock: 4, grade: 'A', sku: 'L9CF01BK',  sold: 51,
+        price: 11200000, stock: 4, grade: 'A', sku: 'L9CF01BK',  sold: 51, berat: 2240,
         images: ['images/produk/id33_L9CF01BK/1.webp', 'images/produk/id33_L9CF01BK/2.webp', 'images/produk/id33_L9CF01BK/3.webp', 'images/produk/id33_L9CF01BK/4.webp', 'images/produk/id33_L9CF01BK/5.webp', 'images/produk/id33_L9CF01BK/6.webp', 'images/produk/id33_L9CF01BK/7.webp', 'images/produk/id33_L9CF01BK/8.webp'], 
         description: {
             intro: 'Pilihan cerdas untuk MacBook Air M2. Unit ini dalam kondisi istimewa, fisik 95% mulus dengan baterai 100% (CC sangat rendah: 52). Nikmati desain modern, kecepatan M2, dan kenyamanan MagSafe. Sebuah paket komplit bernilai tinggi untuk Anda.',
@@ -928,7 +928,7 @@ const products = [
     // Produk 34
     { 
         id: 34, kategori: 'Mac', name: 'Macbook Air 13" Intel Core i3 (2020) - Space Grey', specs: '8GB RAM, 256GB SSD', 
-        price: 6800000, stock: 2, grade: 'A', sku: '7RCF3ESV',  sold: 66,
+        price: 6800000, stock: 2, grade: 'A', sku: '7RCF3ESV',  sold: 66, berat: 2290,
         images: ['images/produk/id34_7RCF3ESV/1.webp', 'images/produk/id34_7RCF3ESV/2.webp', 'images/produk/id34_7RCF3ESV/3.webp', 'images/produk/id34_7RCF3ESV/4.webp', 'images/produk/id34_7RCF3ESV/5.webp', 'images/produk/id34_7RCF3ESV/6.webp', 'images/produk/id34_7RCF3ESV/7.webp'], 
         description: {
             intro: 'MacBook Air 2020 modern yang super portabel. Kondisi sangat baik, fisik 95% mulus dengan baterai sehat 86%. Ditenagai Intel i3, laptop ini andal untuk semua tugas harian Anda. Nilai terbaik untuk mendapatkan laptop Apple modern dengan harga terjangkau.',
@@ -967,6 +967,7 @@ const products = [
         name: 'iPhone 16 Pro Max',
         kategori: 'iPhone',
         basePrice: 20299000,
+        berat: 477,
         images: {
                 'Desert Titanium': ['images/produk/id35_ip16pm/ip16pm-dt-1.webp', 'images/produk/id35_ip16pm/ip16pm-dt-2.webp', 'images/produk/id35_ip16pm/ip16pm-dt-3.webp', 'images/produk/id35_ip16pm/ip16pm-dt-4.webp'],
                 'Natural Titanium': ['images/produk/id35_ip16pm/ip16pm-nt-1.webp', 'images/produk/id35_ip16pm/ip16pm-nt-2.webp', 'images/produk/id35_ip16pm/ip16pm-nt-3.webp', 'images/produk/id35_ip16pm/ip16pm-nt-4.webp'],
@@ -1002,6 +1003,7 @@ const products = [
         name: 'iPhone 16 Pro',
         kategori: 'iPhone',
         basePrice: 16799000, // Harga untuk varian paling dasar
+        berat: 449,
         images: {
                 // Sediakan gambar untuk setiap warna
                 'Desert Titanium': ['images/produk/id36_ip16pro/ip16pro-dt-1.webp', 'images/produk/id36_ip16pro/ip16pro-dt-2.webp', 'images/produk/id36_ip16pro/ip16pro-dt-3.webp', 'images/produk/id36_ip16pro/ip16pro-dt-4.webp'],
@@ -1044,6 +1046,7 @@ const products = [
         name: 'iPhone 16',
         kategori: 'iPhone',
         basePrice: 12999000,
+        berat: 420,
         images: {
                 'Ultramarine': ['images/produk/id37_ip16/ip16-um-1.webp', 'images/produk/id37_ip16/ip16-um-2.webp', 'images/produk/id37_ip16/ip16-um-3.webp', 'images/produk/id37_ip16/ip16-um-4.webp'],
                 'Teal': ['images/produk/id37_ip16/ip16-te-1.webp', 'images/produk/id37_ip16/ip16-te-2.webp', 'images/produk/id37_ip16/ip16-te-3.webp', 'images/produk/id37_ip16/ip16-te-4.webp'],
@@ -1087,6 +1090,7 @@ const products = [
             name: 'iPhone 16e',
             kategori: 'iPhone',
             basePrice: 9999000,
+            berat: 417,
             images: {
                 'Black': ['images/produk/id57_ip16e/ip16e-main.webp', 'images/produk/id57_ip16e/ip16e-bk-1.webp', 'images/produk/id57_ip16e/ip16e-bk-2.webp', 'images/produk/id57_ip16e/ip16e-bk-3.webp'],
                 'White': ['images/produk/id57_ip16e/ip16e-wh-1.webp', 'images/produk/id57_ip16e/ip16e-wh-2.webp', 'images/produk/id57_ip16e/ip16e-wh-3.webp'],
@@ -1112,6 +1116,7 @@ const products = [
             name: 'iPhone 15 Pro',
             kategori: 'iPhone',
             basePrice: 14999000,
+            berat: 437,
             images: {
                 'Natural Titanium': ['images/produk/id58_ip15p/ip15p-nt-1.webp', 'images/produk/id58_ip15p/ip15p-nt-2.webp', 'images/produk/id58_ip15p/ip15p-nt-3.webp'],
                 'Blue Titanium': ['images/produk/id58_ip15p/ip15p-bt-1.webp', 'images/produk/id58_ip15p/ip15p-bt-2.webp', 'images/produk/id58_ip15p/ip15p-bt-3.webp'],
@@ -1145,6 +1150,7 @@ const products = [
         name: 'iPhone 15',
         kategori: 'iPhone',
         basePrice: 9999000,
+        berat: 421,
         images: {
                 'Blue': ['images/produk/id38_ip15/ip15-bu-1.webp', 'images/produk/id38_ip15/ip15-bu-2.webp', 'images/produk/id38_ip15/ip15-bu-3.webp'],
                 'Pink': ['images/produk/id38_ip15/ip15-pi-1.webp', 'images/produk/id38_ip15/ip15-pi-2.webp', 'images/produk/id38_ip15/ip15-pi-3.webp'],
@@ -1193,6 +1199,7 @@ const products = [
             name: 'iPhone 14 Pro',
             kategori: 'iPhone',
             basePrice: 13599000,
+            berat: 456,
             images: {
                 'Deep Purple': ['images/produk/id59_ip14p/ip14p-dp-1.webp', 'images/produk/id59_ip14p/ip14p-dp-2.webp', 'images/produk/id59_ip14p/ip14p-dp-3.webp'],
                 'Gold': ['images/produk/id59_ip14p/ip14p-go-1.webp', 'images/produk/id59_ip14p/ip14p-go-2.webp', 'images/produk/id59_ip14p/ip14p-go-3.webp'],
@@ -1229,6 +1236,7 @@ const products = [
             name: 'iPhone 14',
             kategori: 'iPhone',
             basePrice: 8699000,
+            berat: 422,
             images: {
                     'Red': ['images/produk/id39_ip14/ip14-re-1.webp'],
                     'Blue': ['images/produk/id39_ip14/ip14-bu-1.webp'],
@@ -1271,6 +1279,7 @@ const products = [
             name: 'iPhone 13 Pro',
             kategori: 'iPhone',
             basePrice: 11899000,
+            berat: 454,
             images: {
                 'Sierra Blue': ['images/produk/id60_ip13p/ip13p-sb-1.webp'],
                 'Graphite': ['images/produk/id60_ip13p/ip13p-gr-1.webp'],
@@ -1304,6 +1313,7 @@ const products = [
             name: 'iPhone 13',
             kategori: 'iPhone',
             basePrice: 7399000,
+            berat: 424,
             images: {
                 'Green': ['images/produk/id61_ip13/ip13-gr-1.webp'],
                 'Blue': ['images/produk/id61_ip13/ip13-bl-1.webp'],
@@ -1339,6 +1349,7 @@ const products = [
             name: 'iPhone 12',
             kategori: 'iPhone',
             basePrice: 6299000,
+            berat: 414,
             images: {
                 'Purple': ['images/produk/id62_ip12/ip12-pu-1.webp'],
                 'Blue': ['images/produk/id62_ip12/ip12-bu-1.webp'],
@@ -1386,6 +1397,7 @@ const products = [
         kategori: 'iPad', // <-- Kategori baru
         name: 'iPad Pro M4 13" (2024)',
         basePrice: 17999000,
+        berat: 979,
         images: {
             'Space Black': ['images/produk/id40_ipp13/ipp13-sb-1.webp', 'images/produk/id40_ipp13/ipp13-sb-2.webp', 'images/produk/id40_ipp13/ipp13-sb-3.webp'],
             'Silver': ['images/produk/id40_ipp13/ipp13-sl-1.webp', 'images/produk/id40_ipp13/ipp13-sl-2.webp', 'images/produk/id40_ipp13/ipp13-sl-3.webp'],
@@ -1413,7 +1425,8 @@ const products = [
         id: 41,
         kategori: 'iPad',
         name: 'iPad Pro M4 11" (2024)',
-        basePrice: 14999000,
+        basePrice: 13999000,
+        berat: 844,
         images: {
             'Silver': ['images/produk/id41_ipp11/ipp11-sl-1.webp', 'images/produk/id41_ipp11/ipp11-sl-2.webp', 'images/produk/id41_ipp11/ipp11-sl-3.webp'],
             'Space Black': ['images/produk/id41_ipp11/ipp11-sb-1.webp', 'images/produk/id41_ipp11/ipp11-sb-2.webp', 'images/produk/id41_ipp11/ipp11-sb-3.webp'],
@@ -1440,7 +1453,8 @@ const products = [
         id: 42,
         kategori: 'iPad',
         name: 'iPad Air M3 13" (2025)',
-        basePrice: 13999000,
+        basePrice: 12999000,
+        berat: 1017,
         images: {
             'Blue': ['images/produk/id42_ipa13/ipa13-bu-1.webp', 'images/produk/id42_ipa13/ipa13-bu-2.webp', 'images/produk/id42_ipa13/ipa13-bu-3.webp'],
             'Space Grey': ['images/produk/id42_ipa13/ipa13-sg-1.webp', 'images/produk/id42_ipa13/ipa13-sg-2.webp', 'images/produk/id42_ipa13/ipa13-sg-3.webp'],
@@ -1481,7 +1495,8 @@ const products = [
         id: 43,
         kategori: 'iPad',
         name: 'iPad Air M3 11" (2025)',
-        basePrice: 9399000,
+        basePrice: 8199000,
+        berat: 862,
         images: {
             'Purple': ['images/produk/id43_ipa11/ipa11-pu-1.webp', 'images/produk/id43_ipa11/ipa11-pu-2.webp', 'images/produk/id43_ipa11/ipa11-pu-3.webp'],
             'Blue': ['images/produk/id43_ipa11/ipa11-bu-1.webp', 'images/produk/id43_ipa11/ipa11-bu-2.webp', 'images/produk/id43_ipa11/ipa11-bu-3.webp'],
@@ -1519,7 +1534,8 @@ const products = [
         id: 44,
         kategori: 'iPad',
         name: 'iPad (11th Gen)',
-        basePrice: 5999000,
+        basePrice: 5499000,
+        berat: 877,
         images: {
             'Pink': ['images/produk/id44_ip11/ip11-pi-1.webp', 'images/produk/id44_ip11/ip11-pi-2.webp', 'images/produk/id44_ip11/ip11-pi-3.webp'],
             'Blue': ['images/produk/id44_ip11/ip11-bu-1.webp', 'images/produk/id44_ip11/ip11-bu-2.webp', 'images/produk/id44_ip11/ip11-bu-3.webp'],
@@ -1554,7 +1570,8 @@ const products = [
         id: 45,
         kategori: 'iPad',
         name: 'iPad mini (7th Gen)',
-        basePrice: 7199000,
+        basePrice: 6999000,
+        berat: 693,
         images: {
             'Starlight': ['images/produk/id45_ipm7/ipm7-sl-1.webp', 'images/produk/id45_ipm7/ipm7-sl-2.webp', 'images/produk/id45_ipm7/ipm7-sl-3.webp'],
             'Blue': ['images/produk/id45_ipm7/ipm7-bu-1.webp', 'images/produk/id45_ipm7/ipm7-bu-2.webp', 'images/produk/id45_ipm7/ipm7-bu-3.webp'],
@@ -1595,7 +1612,8 @@ const products = [
         id: 46,
         kategori: 'AirPods',
         name: 'AirPods Max',
-        basePrice: 6999000,
+        basePrice: 7399000,
+        berat: 770,
         images: {
             'Blue': ['images/produk/id46_apm/apm_blue.webp', 'images/produk/id46_apm/6.webp', 'images/produk/id46_apm/7.webp', 'images/produk/id46_apm/8.webp', 'images/produk/id46_apm/9.webp', 'images/produk/id46_apm/10.webp'],
             'Purple': ['images/produk/id46_apm/apm_purple.webp', 'images/produk/id46_apm/6.webp', 'images/produk/id46_apm/7.webp', 'images/produk/id46_apm/8.webp', 'images/produk/id46_apm/9.webp', 'images/produk/id46_apm/10.webp'],
@@ -1619,7 +1637,8 @@ const products = [
         id: 47,
         kategori: 'AirPods',
         name: 'AirPods Pro (Generasi ke-2)',
-        basePrice: 3499000,
+        basePrice: 3099000,
+        berat: 311,
         images: {
                 'White': ['images/produk/id47_app/1.webp', 'images/produk/id47_app/2.webp', 'images/produk/id47_app/3.webp', 'images/produk/id47_app/4.webp', 'images/produk/id47_app/5.webp']
         },
@@ -1636,7 +1655,8 @@ const products = [
         id: 48,
         kategori: 'AirPods',
         name: 'AirPods (Generasi ke-4)',
-        basePrice: 1799000,
+        basePrice: 1749000,
+        berat: 291,
         images: {
             'Default': ['images/produk/id48_ap4/1.webp', 'images/produk/id48_ap4/2.webp', 'images/produk/id48_ap4/3.webp', 'images/produk/id48_ap4/4.webp', 'images/produk/id48_ap4/5.webp']
         },
@@ -1667,6 +1687,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKM-BK-US',
         sold: 25,
+        berat: 790,
         images: ['images/produk/id49_mkm_bl/mkm-bl-1.webp', 'images/produk/id49_mkm_bl/mkm-bl-2.webp', 'images/produk/id49_mkm_bl/mkm-bl-3.webp', 'images/produk/id49_mkm_bl/mkm-bl-4.webp', 'images/produk/id49_mkm_bl/mkm-bl-5.webp'],
         description: {
             intro: 'Magic Keyboard dengan tombol hitam menghadirkan pengalaman mengetik yang sangat nyaman dan presisi. Dilengkapi Touch ID untuk autentikasi yang cepat dan aman.',
@@ -1688,6 +1709,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKM-WH-US',
         sold: 35,
+        berat: 790,
         images: ['images/produk/id50_mkm_wh/mkm-wh-1.webp', 'images/produk/id50_mkm_wh/mkm-wh-2.webp', 'images/produk/id50_mkm_wh/mkm-wh-3.webp', 'images/produk/id50_mkm_wh/mkm-wh-4.webp', 'images/produk/id50_mkm_wh/mkm-wh-5.webp'],
         description: {
             intro: 'Magic Keyboard dengan tombol putih klasik menghadirkan pengalaman mengetik yang sangat nyaman dan presisi. Dilengkapi Touch ID untuk autentikasi yang cepat dan aman.',
@@ -1709,6 +1731,7 @@ const products = [
         grade: 'Baru',
         sku: 'MTP-BK',
         sold: 28,
+        berat: 630,
         images: ['images/produk/id51_mt_bl/mt-bl-1.webp', 'images/produk/id51_mt_bl/mt-bl-2.webp', 'images/produk/id51_mt_bl/mt-bl-3.webp', 'images/produk/id51_mt_bl/mt-bl-4.webp', 'images/produk/id51_mt_bl/mt-bl-5.webp'],
         description: {
             intro: 'Magic Trackpad nirkabel dengan permukaan hitam elegan. Dapat diisi ulang, dengan rangkaian lengkap gestur Multi-Touch dan teknologi Force Touch.',
@@ -1729,6 +1752,7 @@ const products = [
         grade: 'Baru',
         sku: 'MTP-WH',
         sold: 45,
+        berat: 630,
         images: ['images/produk/id52_mt_wh/mt-wh-1.webp', 'images/produk/id52_mt_wh/mt-wh-2.webp', 'images/produk/id52_mt_wh/mt-wh-3.webp', 'images/produk/id52_mt_wh/mt-wh-4.webp', 'images/produk/id52_mt_wh/mt-wh-5.webp'],
         description: {
             intro: 'Magic Trackpad nirkabel dengan permukaan putih klasik. Dapat diisi ulang, dengan rangkaian lengkap gestur Multi-Touch dan teknologi Force Touch.',
@@ -1749,6 +1773,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKIP13-BK-US',
         sold: 94,
+        berat: 1060,
         images: ['images/produk/id53_mk13_bl/mk13-bl-1.webp', 'images/produk/id53_mk13_bl/mk13-bl-2.webp', 'images/produk/id53_mk13_bl/mk13-bl-3.webp', 'images/produk/id53_mk13_bl/mk13-bl-4.webp', 'images/produk/id53_mk13_bl/mk13-bl-5.webp'],
         description: {
             intro: 'Magic Keyboard baru untuk iPad Pro adalah pendamping yang luar biasa. Menghadirkan pengalaman mengetik terbaik, trackpad baru yang lebih besar, dan sandaran aluminium yang kokoh dalam warna Hitam klasik.',
@@ -1770,6 +1795,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKIP13-WH-US',
         sold: 74,
+        berat: 1060,
         images: ['images/produk/id54_mk13_wh/mk13-wh-1.webp', 'images/produk/id54_mk13_wh/mk13-wh-2.webp', 'images/produk/id54_mk13_wh/mk13-wh-3.webp', 'images/produk/id54_mk13_wh/mk13-wh-4.webp', 'images/produk/id54_mk13_wh/mk13-wh-5.webp'],
         description: {
             intro: 'Magic Keyboard baru untuk iPad Pro adalah pendamping yang luar biasa. Menghadirkan pengalaman mengetik terbaik, trackpad baru yang lebih besar, dan sandaran aluminium yang kokoh dalam warna Putih yang elegan.',
@@ -1791,6 +1817,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKIP11-BK-US',
         sold: 172,
+        berat: 980,
         images: ['images/produk/id55_mk11_bl/mk11-bl-1.webp', 'images/produk/id55_mk11_bl/mk11-bl-2.webp', 'images/produk/id55_mk11_bl/mk11-bl-3.webp', 'images/produk/id55_mk11_bl/mk11-bl-4.webp', 'images/produk/id55_mk11_bl/mk11-bl-5.webp'],
         description: {
             intro: 'Mengubah iPad Pro 11 inci Anda menjadi laptop. Magic Keyboard baru ini menghadirkan pengalaman mengetik terbaik, trackpad baru yang lebih besar, dan sandaran aluminium kokoh dalam warna Hitam klasik.',
@@ -1812,6 +1839,7 @@ const products = [
         grade: 'Baru',
         sku: 'MKIP11-WH-US',
         sold: 104,
+        berat: 980,
         images: ['images/produk/id56_mk11_wh/mk11-wh-1.webp', 'images/produk/id56_mk11_wh/mk11-wh-2.webp', 'images/produk/id56_mk11_wh/mk11-wh-3.webp', 'images/produk/id56_mk11_wh/mk11-wh-4.webp', 'images/produk/id56_mk11_wh/mk11-wh-5.webp'],
         description: {
             intro: 'Mengubah iPad Pro 11 inci Anda menjadi laptop. Magic Keyboard baru ini menghadirkan pengalaman mengetik terbaik, trackpad baru yang lebih besar, dan sandaran aluminium kokoh dalam warna Putih yang elegan.',

@@ -13,8 +13,8 @@ const CONFIG = {
         'IMAC25':    { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Mac' },
         'MAC25':    { type: 'flat', value: 600000, maxDiscount: null, minPurchase: 6300000, shippingDiscountPercent: 100, category: 'Mac' },
         'MACMINI25':    { type: 'flat', value: 800000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACBOOK25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'Mac' },
-        'MACBOOKPRO25':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 19000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACBOOK25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 13000000, shippingDiscountPercent: 100, category: 'Mac' },
+        'MACBOOKPRO25':    { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 18000000, shippingDiscountPercent: 100, category: 'Mac' },
         'MACPRO25':    { type: 'flat', value: 3500000, maxDiscount: null, minPurchase: 30000000, shippingDiscountPercent: 100, category: 'Mac' }, 
         
         //iphone
@@ -25,14 +25,14 @@ const CONFIG = {
 
         //ipad
         'IPAD25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'iPad' },
-        'IPADMINI25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADMINI25': { type: 'flat', value: 1500000, maxDiscount: null, minPurchase: 6000000, shippingDiscountPercent: 100, category: 'iPad' },
         'IPADAIR25': { type: 'flat', value: 2000000, maxDiscount: null, minPurchase: 9000000, shippingDiscountPercent: 100, category: 'iPad' },
-        'IPADPRO25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 14000000, shippingDiscountPercent: 100, category: 'iPad' },
+        'IPADPRO25': { type: 'flat', value: 2500000, maxDiscount: null, minPurchase: 12000000, shippingDiscountPercent: 100, category: 'iPad' },
 
         //airpods
         'AIRPODS25': { type: 'flat', value: 300000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'AirPods' },
         'AIRPODSPRO25': { type: 'flat', value: 500000, maxDiscount: null, minPurchase: 3000000, shippingDiscountPercent: 100, category: 'AirPods' },
-        'AIRPODSMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 7000000, shippingDiscountPercent: 100, category: 'AirPods' },
+        'AIRPODSMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 5000000, shippingDiscountPercent: 100, category: 'AirPods' },
 
         //accessories
         'ACCESSORIES25': { type: 'flat', value: 200000, maxDiscount: null, minPurchase: 0, shippingDiscountPercent: 100, category: 'Semua' },
@@ -40,8 +40,16 @@ const CONFIG = {
         'ACCESSORIESMAX25': { type: 'flat', value: 1000000, maxDiscount: null, minPurchase: 4500000, shippingDiscountPercent: 100, category: 'Semua' },
     },
     SHIPPING_SERVICES: ['JNE', 'J&T', 'Si Cepat'],
-    SHIPPING_COSTS: {
-        'Sumatra': 151000, 'Jawa': 178000, 'Kalimantan': 182000, 'Sulawesi': 202000, 'Bali': 238000, 'Nusa Tenggara': 268000, 'Maluku': 263000, 'Papua': 335000, 'Bangka Belitung': 124000
+    SHIPPING_COSTS_PER_KG: {
+        'Sumatra': 50000,
+        'Jawa': 60000,
+        'Kalimantan': 65000,
+        'Sulawesi': 70000,
+        'Bali': 75000,
+        'Nusa Tenggara': 80000,
+        'Maluku': 85000,
+        'Papua': 100000,
+        'Bangka Belitung': 40000
     },
     PROVINCES: {
         'Aceh': 'Sumatra', 'Sumatera Utara': 'Sumatra', 'Sumatera Barat': 'Sumatra', 'Riau': 'Sumatra', 'Kepulauan Riau': 'Sumatra', 'Jambi': 'Sumatra', 'Bengkulu': 'Sumatra', 'Sumatera Selatan': 'Sumatra', 'Kepulauan Bangka Belitung': 'Bangka Belitung', 'Lampung': 'Sumatra',
@@ -876,12 +884,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         function renderTotals() {
             subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            let totalWeight = cart.reduce((sum, item) => {
+                const productInfo = products.find(p => {
+                    if(p.variants) {
+                        return p.variants.some(v => v.sku === item.id);
+                    }
+                    return p.id === item.id;
+                });
+                const itemWeight = productInfo ? (productInfo.berat || 0) : 0;
+                return sum + (itemWeight * item.quantity);
+            }, 0);
+            
+            const totalWeightInKg = Math.ceil(totalWeight / 1000);
+
+            const selectedProvince = provinceSelect.value;
+            const zone = CONFIG.PROVINCES[selectedProvince];
+            const costPerKg = CONFIG.SHIPPING_COSTS_PER_KG[zone] || 0;
+            shippingCost = costPerKg * totalWeightInKg;
+
             const actualShippingDiscount = shippingCost * (shippingDiscountPercent / 100);
             const finalShippingCost = shippingCost - actualShippingDiscount;
             const total = subtotal - flatDiscount + finalShippingCost;
+
             subtotalEl.textContent = formatRupiah(subtotal);
-            if (shippingCost > 0) {
-                shippingCostEl.textContent = formatRupiah(finalShippingCost);
+            if (selectedProvince) {
+                shippingCostEl.textContent = `${formatRupiah(finalShippingCost)} (${totalWeightInKg} kg)`;
                 const existingDiscountSpan = shippingCostEl.querySelector('.discount');
                 if(existingDiscountSpan) existingDiscountSpan.remove();
                 if (actualShippingDiscount > 0) {
@@ -890,6 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 shippingCostEl.textContent = 'Pilih provinsi';
             }
+
             if (flatDiscount > 0) {
                 discountAmountEl.textContent = `- ${formatRupiah(flatDiscount)}`;
                 discountLine.style.display = 'flex';
@@ -963,7 +992,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 service: document.getElementById('shipping-service').value
             };
             const paymentData = { 
-                totalPrice: finalTotal > 0 ? finalTotal : 0, 
+                totalPrice: finalTotal > 0 ? total : 0, 
                 code: uniqueCode, 
                 endTime: paymentEndTime,
                 shippingInfo: shippingInfo
@@ -976,9 +1005,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         function setupEventListeners() {
             provinceSelect.addEventListener('change', () => {
-                const selectedProvince = provinceSelect.value;
-                const zone = CONFIG.PROVINCES[selectedProvince];
-                shippingCost = CONFIG.SHIPPING_COSTS[zone] || 0;
                 renderTotals();
             });
             couponBtn.addEventListener('click', () => {
@@ -1271,12 +1297,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 8000);
         };
 
-        // Atur interval untuk menampilkan popup (antara 30 hingga 90 detik)
-        const randomInterval = Math.floor(Math.random() * (90000 - 30000 + 1)) + 30000;
+        // Atur interval untuk menampilkan popup (antara 150 hingga 350 detik)
+        const randomInterval = Math.floor(Math.random() * (350000 - 150000 + 1)) + 150000;
         setInterval(showRandomPurchase, randomInterval);
 
         // Tampilkan popup pertama kali setelah beberapa detik
-        setTimeout(showRandomPurchase, 10000); // Tampilkan setelah 10 detik
+        setTimeout(showRandomPurchase, 20000); // Tampilkan setelah 20 detik
     }
 
 
